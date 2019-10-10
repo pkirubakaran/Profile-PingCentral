@@ -5,7 +5,7 @@ services:
     image: pingidentity/pingfederate:${PING_IDENTITY_DEVOPS_TAG}
     command: wait-for pingdirectory:389 -t 300 -- entrypoint.sh start-server
     environment:
-      - SERVER_PROFILE_URL=https://github.com/cprice-ping/Profile-DelAdmin.git
+      - SERVER_PROFILE_URL=https://github.com/cprice-ping/Profile-PingCentral.git
       - SERVER_PROFILE_PATH=pingfed
       - VERBOSE=false
       # BaseURL of the PingFed service
@@ -33,7 +33,7 @@ services:
   pingdirectory:
     image: pingidentity/pingdirectory:${PING_IDENTITY_DEVOPS_TAG}
     environment:
-      - SERVER_PROFILE_URL=https://github.com/cprice-ping/Profile-DelAdmin.git
+      - SERVER_PROFILE_URL=https://github.com/cprice-ping/Profile-PingCentral.git
       - SERVER_PROFILE_PATH=pingdir
       - SERVER_PROFILE_PARENT=BASELINE
       - SERVER_PROFILE_BASELINE_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
