@@ -49,7 +49,19 @@ sn: User 1
 cn: User 1
 uid: user1
 userPassword: 2FederateM0re
-pf-connected-identity: auth-source=pf-local-identity:user-id=appowner1
+pf-connected-identity: auth-source=pf-local-identity:user-id=user1
+
+dn: uid=user2,ou=people,${USER_BASE_DN}
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: pf-connected-identities
+sn: User 2
+cn: User 2
+uid: user2
+userPassword: 2FederateM0re
+pf-connected-identity: auth-source=pf-local-identity:user-id=user2
 
 dn: cn=PFAdminGroup,ou=groups,${USER_BASE_DN}
 objectClass: groupOfNames
