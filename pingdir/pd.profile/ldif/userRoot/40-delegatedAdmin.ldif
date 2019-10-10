@@ -65,7 +65,7 @@ pf-connected-identity: auth-source=pf-local-identity:user-id=user2
 
 dn: cn=PFAdminGroup,ou=groups,${USER_BASE_DN}
 changetype: modify
-add: member
+modify: member
 member: uid=superadmin,ou=Administrators,${USER_BASE_DN}
 
 dn: cn=PCAppOwners,ou=groups,${USER_BASE_DN}
