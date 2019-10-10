@@ -27,20 +27,43 @@ uid: useradmin
 userPassword: 2FederateM0re
 pf-connected-identity: auth-source=pf-local-identity:user-id=useradmin
 
-dn: uid=groupadmin,ou=Administrators,${USER_BASE_DN}
+dn: uid=appowner1,ou=people,${USER_BASE_DN}
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
 objectClass: pf-connected-identities
-sn: Group
-cn: Group Administrator
-uid: groupadmin
+sn: Owner1
+cn: App Owner1
+uid: appowner1
 userPassword: 2FederateM0re
-pf-connected-identity: auth-source=pf-local-identity:user-id=groupadmin
+pf-connected-identity: auth-source=pf-local-identity:user-id=appowner1
 
-dn: cn=deladmins,ou=Administrators,${USER_BASE_DN}
+dn: uid=user1,ou=people,${USER_BASE_DN}
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: pf-connected-identities
+sn: User 1
+cn: User 1
+uid: user1
+userPassword: 2FederateM0re
+pf-connected-identity: auth-source=pf-local-identity:user-id=appowner1
+
+dn: cn=PFAdminGroup,ou=groups,${USER_BASE_DN}
 objectClass: groupOfNames
 objectClass: top
-cn: deladmins
-member: uid=groupadmin,ou=Administrators,${USER_BASE_DN}
+member: uid=superadmin,ou=Administrators,${USER_BASE_DN}
+
+dn: cn=PCAppOwners,ou=groups,${USER_BASE_DN}
+objectClass: groupOfNames
+objectClass: top
+cn: PCAppOwners
+member: uid=appowner1,ou=people,${USER_BASE_DN}
+
+dn: cn=BankingUsers,ou=groups,${USER_BASE_DN}
+objectClass: groupOfNames
+objectClass: top
+cn: BankingUsers
+member: uid=user1,ou=people,${USER_BASE_DN}

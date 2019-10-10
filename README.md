@@ -1,4 +1,4 @@
-This Server profile shows a complete install of PF \ PD with the Delegated Administator service and application configured.
+This Server profile shows a complete install of PingFederate \ PingDirectory \ PingCentral showing User onboarding (Delegated Admin -- Delegator) and Application onboarding (PingCentral).
 
 The Delegator is installed and delivered via PingDirectory.  
 
@@ -15,14 +15,19 @@ These users are created in `ou=Administrators` to demonstrate separating the Adm
 **Super Administrator**  
 `SuperAdmin` \ `2FederateM0re`
 
-**User Administrator**  
-`UserAdmin` \ `2FederateM0re`
+This account has the following rights:
+* Delegated User Administrator
+* Pingfederate Administrator
+* PingCentral Administrator
 
-**Group Administrator**  
-`GroupAdmin` \ `2FederateM0re`  
-This user is a member of the `DelAdmins` group that is used to delegate the Group resources
+**Application Owner 1**
+`appowner1` \ `2FederateM0re`
 
-This stack can be used as the basis of Delegated Admin Use Cases.
+This account has the following rights:
+* PingCentral AppOwner
+* Delegated Admin for BankingUsers Group
+
+This stack can be used as a demo of several Self-Sevice use cases.
 
 Delegated Objects are managed using the PingData console:  
 
