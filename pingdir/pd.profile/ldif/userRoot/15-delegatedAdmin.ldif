@@ -62,21 +62,3 @@ cn: User 2
 uid: user2
 userPassword: 2FederateM0re
 pf-connected-identity: auth-source=pf-local-identity:user-id=user2
-
-dn: cn=PFAdminGroup,ou=groups,${USER_BASE_DN}
-objectClass: top
-objectClass: groupOfNames
-cn: PFAdminGroup
-member: uid=superadmin,ou=Administrators,${USER_BASE_DN}
-
-dn: cn=PCAppOwners,ou=groups,${USER_BASE_DN}
-objectClass: groupOfNames
-objectClass: top
-cn: PCAppOwners
-member: uid=appowner1,ou=people,${USER_BASE_DN}
-
-dn: cn=BankingUsers,ou=groups,${USER_BASE_DN}
-objectClass: groupOfNames
-objectClass: top
-cn: BankingUsers
-member: uid=user1,ou=people,${USER_BASE_DN}
