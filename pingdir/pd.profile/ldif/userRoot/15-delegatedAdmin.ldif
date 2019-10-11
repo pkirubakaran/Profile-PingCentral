@@ -1,6 +1,7 @@
 dn: ou=Administrators,${USER_BASE_DN}
 objectClass: organizationalUnit
 objectClass: top
+aci: (targetattr="isMemberOf")(version 3.0; acl "Allow the pingfederate user to get memberships"; allow (read) userdn="ldap:///cn=pingfederate,cn=root dns,cn=config";)
 ou: Administrators
 
 dn: uid=superadmin,ou=Administrators,${USER_BASE_DN}
