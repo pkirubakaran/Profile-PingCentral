@@ -64,8 +64,9 @@ userPassword: 2FederateM0re
 pf-connected-identity: auth-source=pf-local-identity:user-id=user2
 
 dn: cn=PFAdminGroup,ou=groups,${USER_BASE_DN}
-changetype: add
-add: member
+objectClass: top
+objectClass: groupOfNames
+cn: PFAdminGroup
 member: uid=superadmin,ou=Administrators,${USER_BASE_DN}
 
 dn: cn=PCAppOwners,ou=groups,${USER_BASE_DN}
