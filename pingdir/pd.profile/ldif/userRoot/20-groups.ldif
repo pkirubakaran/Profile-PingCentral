@@ -44,7 +44,7 @@ objectClass: top
 cn: PCAppOwners
 member: uid=appowner1,ou=people,${USER_BASE_DN}
 
-dn: cn=BankingUsers,ou=groups,${USER_BASE_DN}
+dn: cn=BankingUsers,ou=people,${USER_BASE_DN}
 objectClass: groupOfNames
 objectClass: top
 cn: BankingUsers
