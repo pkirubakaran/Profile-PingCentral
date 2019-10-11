@@ -30,7 +30,6 @@ objectClass: top
 objectClass: groupOfNames
 cn: PFAuditorGroup
 member: uid=auditor,ou=people,${USER_BASE_DN}
-member: uid=superadmin,ou=Administrators,${USER_BASE_DN}
 
 dn: cn=PFUserAdminGroup,ou=groups,${USER_BASE_DN}
 objectClass: top
