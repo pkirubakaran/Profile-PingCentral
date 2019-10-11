@@ -35,7 +35,7 @@ dsconfig create-delegated-admin-rights --rights-name "Super Admin" --set enabled
 dsconfig create-delegated-admin-resource-rights --rights-name "Super Admin" --rest-resource-type users --set enabled:true --set admin-permission:create --set admin-permission:delete --set admin-permission:read --set admin-permission:update --set admin-scope:all-resources-in-base
 dsconfig create-delegated-admin-resource-rights --rights-name "Super Admin" --rest-resource-type groups --set enabled:true --set admin-permission:create --set admin-permission:delete --set admin-permission:manage-group-membership --set admin-permission:read --set admin-permission:update --set admin-scope:all-resources-in-base
 
-dsconfig create-delegated-admin-rights --rights-name "Application Owners" --set enabled:true --set admin-user-dn:uid=appowner1,ou=Administrators,${USER_BASE_DN} 
+dsconfig create-delegated-admin-rights --rights-name "Application Owners" --set enabled:true --set admin-user-dn:uid=appowner1,ou=people,${USER_BASE_DN} 
 dsconfig create-delegated-admin-resource-rights --rights-name "Application Owners" --rest-resource-type users --set enabled:true --set admin-permission:read --set resource-subtree:ou=people,${USER_BASE_DN}
 dsconfig create-delegated-admin-resource-rights --rights-name "Application Owners" --rest-resource-type groups --set enabled:true --set admin-permission:create --set admin-permission:delete --set admin-permission:manage-group-membership --set admin-permission:read --set admin-permission:update --set resource-subtree:ou=groups,${USER_BASE_DN}
 
