@@ -20,7 +20,7 @@ This account has the following rights:
 * Pingfederate Administrator
 * PingCentral Administrator
 
-**Application Owner 1**
+**Application Owner 1**  
 `appowner1` \ `2FederateM0re`
 
 This account has the following rights:
@@ -37,16 +37,12 @@ Delegated Objects are managed using the PingData console:
 * User: `Administrator`
 * Pwd: `2FederateM0re`
 
-PingFederate needs a couple of additional options:
-
-* Virtual Host -- `pingfederate`  (Used for the backchannel ATV call from PD)
-* OAuth AS --> Allowed Origins -- `https://${DELEGATOR_PUBLIC_URL}`  (Used to allow Delegator to call OIDC endpoints)
-* PingLogon client is configured for Implicit and a wildcard `redirect_uri`
-
 ## Deployment - Docker Compose
 Environment variables in the `docker-compose.yaml` can be modified to inject the correct locations into this stack
 
 To implement this Use Case, download the `docker-compose.yaml` file and run `docker-compose up -d`
+
+A sample `yaml` file for `localhost` is also provided -- rename `docker-compose-locahost.yaml` to `docker-compose.yaml`
 
 DelAdmin trace logging has been enabled:  
 https://support.pingidentity.com/s/document-item?bundleId=pingdirectory-73&topicId=hld1564011489908.html
