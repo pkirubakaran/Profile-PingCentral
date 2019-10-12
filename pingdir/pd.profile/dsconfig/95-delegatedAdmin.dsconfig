@@ -41,7 +41,7 @@ dsconfig create-delegated-admin-resource-rights --rights-name "Super Admin" --re
 
 dsconfig create-delegated-admin-rights --rights-name "Application Owners" --set enabled:true --set admin-user-dn:uid=appowner1,ou=people,${USER_BASE_DN} 
 dsconfig create-delegated-admin-resource-rights --rights-name "Application Owners" --rest-resource-type users --set enabled:true --set admin-permission:read --set resource-subtree:ou=people,${USER_BASE_DN}
-dsconfig create-delegated-admin-resource-rights --rights-name "Application Owners" --rest-resource-type groups --set enabled:true --set admin-permission:manage-group-membership --set admin-permission:read --set admin-permission:update --set admin-scope:resources-in-specific-group --set resources-in-group:cn=BankingUsers,ou=people,${USER_BASE_DN}
+dsconfig create-delegated-admin-resource-rights --rights-name "Application Owners" --rest-resource-type groups --set enabled:true --set admin-permission:manage-group-membership --set admin-permission:read --set admin-permission:update -set resource-subtree:ou=groups,${USER_BASE_DN}
 
 # Enable Logging
 dsconfig create-debug-target --publisher-name 'File-Based Debug Logger' --target-name com.unboundid.directory.server.http --set debug-level:VERBOSE
