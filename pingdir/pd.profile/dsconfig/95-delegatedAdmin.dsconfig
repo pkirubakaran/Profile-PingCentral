@@ -4,7 +4,7 @@
 dsconfig create-rest-resource-type --type user --type-name users --set "display-name:Users" --set enabled:true --set "search-base-dn:${USER_BASE_DN}" --set primary-display-attribute-type:cn --set resource-endpoint:users --set "search-filter-pattern:(|(cn=*%%*)(mail=%%*)(uid=%%*)(sn=*%%*))" --set structural-ldap-objectclass:inetOrgPerson --set "parent-dn:ou=people,${USER_BASE_DN}"
 dsconfig create-rest-resource-type --type group --type-name groups --set "display-name:Groups" --set enabled:true --set "search-base-dn:${USER_BASE_DN}" --set primary-display-attribute-type:cn --set resource-endpoint:groups --set "search-filter-pattern:(cn=*%%*)" --set structural-ldap-objectclass:groupOfNames --set "parent-dn:ou=groups,${USER_BASE_DN}"
 
-dsconfig create-rest-resource-type --type-name "App Owner 1" --type group --set "description:Used to grant access to Groups that are linked to App Owner 1" --set enabled:true --set resource-endpoint:groups --set structural-ldap-objectclass:groupOfNames --set search-base-dn:cn=BankingUsersou=Groups,dc=example,dc=com --set "display-name:App Owner 1 - Groups" --set "search-filter-pattern:(cn=*%%*)" --set primary-display-attribute-type:cn 
+dsconfig create-rest-resource-type --type-name "App Owner 1" --type group --set "description:Used to grant access to Groups that are linked to App Owner 1" --set enabled:true --set resource-endpoint:groups --set structural-ldap-objectclass:groupOfNames --set search-base-dn:cn=BankingUsers,ou=Groups,dc=example,dc=com --set "display-name:App Owner 1 - Groups" --set "search-filter-pattern:(cn=*%%*)" --set primary-display-attribute-type:cn 
 
 #
 # These attributes are to be made accessible through the Delegated Admin API.
