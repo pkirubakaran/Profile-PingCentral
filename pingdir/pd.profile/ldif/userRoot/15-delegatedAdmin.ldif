@@ -15,7 +15,7 @@ cn: Super Administrator
 uid: superadmin
 userPassword: 2FederateM0re
 pf-connected-identity: auth-source=pf-local-identity:user-id=superadmin
-employeeType: Admin
+employeeType: IAM-Admin
 
 dn: uid=useradmin,ou=Administrators,${USER_BASE_DN}
 objectClass: top
@@ -40,7 +40,7 @@ cn: App Owner1
 uid: appowner1
 userPassword: 2FederateM0re
 pf-connected-identity: auth-source=pf-local-identity:user-id=appowner1
-employeeType: Developer
+employeeType: Application-Owner
 
 dn: uid=user1,ou=people,${USER_BASE_DN}
 objectClass: top
