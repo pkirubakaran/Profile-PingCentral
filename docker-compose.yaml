@@ -1,6 +1,13 @@
 version: "2"
 
 services:
+  pingcentral:
+    image: pricecs/pingcentral
+    ports: 
+      - 9022:9022
+    networks:
+      - pingnet
+
   pingfederate:
     image: pingidentity/pingfederate:${PING_IDENTITY_DEVOPS_TAG}
     command: wait-for pingdirectory:389 -t 300 -- entrypoint.sh start-server

@@ -6,6 +6,7 @@
     <con:map name="bearer-access-token-management-plugins-parents"/>
     <con:map name="bearer-access-token-management-plugin-sequence">
         <con:item name="jwtHTML">681920</con:item>
+        <con:item name="JWTPingCentral">1165543</con:item>
     </con:map>
     <con:item name="bearer-access-token-management-plugins-default">jwtHTML</con:item>
 </con:config>
