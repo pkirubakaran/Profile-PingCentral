@@ -25,7 +25,9 @@
                     <urn:C2cContractToAssertionMapping AbortIfNotFoundInAnyDataSources="false" RestrictVirtualServerIds="false" C2cContractId="hRsB6datB6BJplah" C2cContractName="HTML Form with LIP">
                         <urn:DefaultAttributeMapping>
                             <urn:AttributeMap Name="SAML_SUBJECT" Type="Authentication Policy Contract" Value="entryUUID"/>
-                            <urn:TokenAuthorizationIssuanceCriteria/>
+                            <urn:TokenAuthorizationIssuanceCriteria>
+                                <urn:TokenAuthorizationIssuanceCriterion AttrName="isMemberOf" AttrSourceType="Authentication Policy Contract" ComparisonValue="cn=InsuranceUsers,ou=AppOwner1-Managed,ou=Groups,${USER_BASE_DN}" ErrorResult="Not member of InsuranceUsers" Expr="" Condition="multivalue-does-not-contain-dn"/>
+                            </urn:TokenAuthorizationIssuanceCriteria>
                         </urn:DefaultAttributeMapping>
                     </urn:C2cContractToAssertionMapping>
                     <urn:NameIdentifierMappingType IncludeAdditionalAttributes="false" IncludeAdditionalTransientAttributes="false"/>
