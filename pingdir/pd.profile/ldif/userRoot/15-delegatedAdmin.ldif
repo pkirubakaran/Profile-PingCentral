@@ -11,6 +11,7 @@ objectClass: organizationalPerson
 objectClass: inetOrgPerson
 objectClass: pf-connected-identities
 sn: Super
+givenName: Administrator
 cn: Super Administrator
 uid: superadmin
 userPassword: 2FederateM0re
@@ -36,6 +37,7 @@ objectClass: organizationalPerson
 objectClass: inetOrgPerson
 objectClass: pf-connected-identities
 sn: Owner1
+givenName: Application
 cn: App Owner1
 uid: appowner1
 userPassword: 2FederateM0re
