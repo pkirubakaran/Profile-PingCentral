@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urn:AccessTokenManagerConfiguration inheritAccessControlSettings="false" inheritSelectionSettings="false" inheritSessionValidationSettings="false" restrictClients="true" checkSessionRevocationStatus="false" checkValidAuthnSession="false" updateAuthnSessionActivity="false" defaultSubjectAttribute="" isInheritExtendedContractAttributes="false" name="JWT-PingCentral" xmlns:urn="urn:sourceid.org:saml2:adapter:conf">
+<urn:AccessTokenManagerConfiguration inheritAccessControlSettings="false" inheritSelectionSettings="false" inheritSessionValidationSettings="false" restrictClients="false" checkSessionRevocationStatus="false" checkValidAuthnSession="false" updateAuthnSessionActivity="false" defaultSubjectAttribute="" isInheritExtendedContractAttributes="false" name="JWT-PingCentral" xmlns:urn="urn:sourceid.org:saml2:adapter:conf">
     <urn:Fields>
         <urn:Field name="Token Lifetime">120</urn:Field>
         <urn:Field name="JWS Algorithm">HS256</urn:Field>
@@ -60,5 +60,4 @@
     <urn:ExtendedContractAttributes>
         <urn:AttributeName>sub</urn:AttributeName>
     </urn:ExtendedContractAttributes>
-    <urn:AllowedClientId>PingCentral</urn:AllowedClientId>
 </urn:AccessTokenManagerConfiguration>
