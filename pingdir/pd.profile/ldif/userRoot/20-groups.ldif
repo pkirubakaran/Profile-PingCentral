@@ -50,3 +50,10 @@ objectClass: top
 cn: BankingUsers
 member: uid=user1,ou=people,${USER_BASE_DN}
 owner: uid=appowner1,ou=people,${USER_BASE_DN}
+
+dn: cn=InsuranceUsers,ou=Groups,${USER_BASE_DN}
+objectClass: groupOfNames
+objectClass: top
+cn: InsuranceUsers
+member: uid=user2,ou=people,${USER_BASE_DN}
+owner: uid=appowner1,ou=people,${USER_BASE_DN}
