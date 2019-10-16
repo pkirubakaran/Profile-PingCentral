@@ -44,19 +44,19 @@ objectClass: top
 cn: PCAppOwners
 member: uid=appowner1,ou=people,${USER_BASE_DN}
 
-dn: ou=AppOwner1-Managed,ou=groups,${USER_BASE_DN}
+dn: ou=AppOwner1-Groups,ou=groups,${USER_BASE_DN}
 objectClass: organizationalUnit
 objectClass: top
-ou: AppOwner1-Managed
+ou: AppOwner1-Groups
 
-dn: cn=BankingUsers,ou=AppOwner1-Managed,ou=Groups,${USER_BASE_DN}
+dn: cn=BankingUsers,ou=AppOwner1-Groups,ou=Groups,${USER_BASE_DN}
 objectClass: groupOfNames
 objectClass: top
 cn: BankingUsers
 member: uid=user1,ou=people,${USER_BASE_DN}
 owner: uid=appowner1,ou=people,${USER_BASE_DN}
 
-dn: cn=InsuranceUsers,ou=AppOwner1-Managed,ou=Groups,${USER_BASE_DN}
+dn: cn=InsuranceUsers,ou=AppOwner1-Groups,ou=Groups,${USER_BASE_DN}
 objectClass: groupOfNames
 objectClass: top
 cn: InsuranceUsers
