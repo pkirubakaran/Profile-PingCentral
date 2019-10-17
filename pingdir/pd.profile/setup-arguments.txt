@@ -27,7 +27,8 @@
     --httpsPort ${HTTPS_PORT} \
     --enableStartTLS \
     ${jvmOptions} \
-    ${certificateOptions} \
+    --usePkcs12Keystore ${PING_SERVER_ROOT}/config/cpricelab.p12
+    --keyStorePassword 2FederateM0re
     ${encryptionOption} \
     --rootUserDN "${ROOT_USER_DN}" \
     --rootUserPasswordFile "${ROOT_USER_PASSWORD_FILE}" \
