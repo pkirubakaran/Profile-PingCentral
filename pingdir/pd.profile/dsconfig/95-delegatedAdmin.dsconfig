@@ -26,10 +26,9 @@ dsconfig set-rest-resource-type-prop --type-name users --set enabled:true
 dsconfig set-rest-resource-type-prop --type-name groups --set enabled:true 
 
 # Configure Resources for AppOwner1
-dsconfig create-rest-resource-type --type-name AppOwner1-Groups --type group --set "description:Used to grant access to Groups that are linked to App Owner 1" --set enabled:true --set resource-endpoint:appowner1 --set structural-ldap-objectclass:groupOfNames --set search-base-dn:ou=AppOwner1-Groups,ou=Groups,${USER_BASE_DN} --set "display-name:App Owner 1 - Groups" --set parent-resource-type:groups --set "search-filter-pattern:(cn=*%%*)" --set primary-display-attribute-type:cn 
+dsconfig create-rest-resource-type --type-name AppOwner1-Groups --type group --set "description:Used to grant access to Groups that are linked to App Owner 1" --set enabled:true --set resource-endpoint:appowner1 --set structural-ldap-objectclass:groupOfNames --set search-base-dn:ou=AppOwner1-Groups,ou=Groups,${USER_BASE_DN} --set "display-name:App Owner 1 - Groups" --set parent-resource-type:groups --set "search-filter-pattern:(cn=*%%*)" --set primary-display-attribute-type:cn  --set create-rdn-attribute-type:cn 
 dsconfig create-delegated-admin-attribute --type-name AppOwner1-Groups --attribute-type cn --set "display-name:Group"
 dsconfig create-delegated-admin-attribute --type-name AppOwner1-Groups --attribute-type description --set "display-name:Description"
-# dsconfig set-rest-resource-type-prop --type-name AppOwner1-Groups --set enabled:true --set parent-dn:ou=AppOwner1-Groups,ou=Groups,dc=example,dc=com --set create-rdn-attribute-type:cn 
 
 # Configure Users for PF Self-Service
 # dsconfig set-rest-resource-type-prop --type-name users --add auxiliary-ldap-objectclass:pf-connected-identities --set post-create-constructed-attribute:pf-connected-identity
