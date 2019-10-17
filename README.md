@@ -78,11 +78,15 @@ The logs can be seen with this command:
 `docker-compose exec pingdirectory tail -f /opt/out/instance/logs/debug`
 
 **PingCentral**
+Clone the `pingcentral` folder and mount the appropriate volumes in `docker-compose.yaml`. These will provide the initial configuration for PingCentral
+
+Replace the dummy `volumes/conf/pingcentral.lic` with a valid one
+
 PingCentral will fail on the initial standing of the stack -- this if for a couple of reasons:
 * PingCentral requires that the OIDC Provider (PingFed) is available when it starts up
 * PingCentral SSO requires that the OIDC Provider is using a valid SSL certificate
 
-If you're using SSO (this setting is controlled in the `/pingcentral/volume/application.properties` file) you need to add a certificate to PingFed --> Security --> SSL Server and make it active.
+If you're using SSO (this setting is controlled in the `/pingcentral/volume/conf/application.properties` file) you need to add a certificate to PingFed --> Security --> SSL Server and make it active.
 
 The `application.properties` file is injected with a mounted volume -- make sure that the path in `docker-compose.yaml` reflects the local location.
 
