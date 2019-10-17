@@ -3,7 +3,12 @@ version: "2"
 services:
   pingcentral:
     image: pricecs/pingcentral
-    ports: 
+    # command: /opt/out/instance/bin/wait-for.sh pingfederate:9031 -t 360
+    # Volumes used to inject initial data until a DevOps method is available
+    volumes:
+      - ./pingcentral/volumes/conf:/opt/out/instance/conf
+      - ./pingcentral/volumes/h2-data:/opt/out/instance/h2-data
+    ports:
       - 9022:9022
     networks:
       - pingnet
