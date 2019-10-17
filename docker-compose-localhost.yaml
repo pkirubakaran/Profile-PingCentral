@@ -1,8 +1,19 @@
 version: "2"
 
 services:
+  pingcentral:
+    image: pricecs/pingcentral
+    # command: /opt/out/instance/bin/wait-for.sh pingfederate:9031 -t 360
+    volumes:
+      - ./pingcentral/volumes/conf:/opt/out/instance/conf
+      - ./pingcentral/volumes/h2-data:/opt/out/instance/h2-data
+    ports:
+      - 9022:9022
+    networks:
+      - pingnet
+
   pingfederate:
-    image: pingidentity/pingfederate:${PING_IDENTITY_DEVOPS_TAG}
+    image: pingidentity/pingfederate:edge
     command: wait-for pingdirectory:389 -t 300 -- entrypoint.sh start-server
     environment:
       - SERVER_PROFILE_URL=https://github.com/cprice-ping/Profile-PingCentral.git
@@ -30,7 +41,7 @@ services:
       - pingnet
 
   pingdirectory:
-    image: pingidentity/pingdirectory:${PING_IDENTITY_DEVOPS_TAG}
+    image: pingidentity/pingdirectory:edge
     environment:
       - SERVER_PROFILE_URL=https://github.com/cprice-ping/Profile-PingCentral.git
       - SERVER_PROFILE_PATH=pingdir
@@ -52,7 +63,7 @@ services:
       - pingnet
                     
   pingdataconsole:
-    image: pingidentity/pingdataconsole:${PING_IDENTITY_DEVOPS_TAG}
+    image: pingidentity/pingdataconsole:edge
     ports:
       - 8443:8443
     networks:
