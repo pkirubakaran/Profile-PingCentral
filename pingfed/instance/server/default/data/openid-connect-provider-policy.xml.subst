@@ -33,7 +33,7 @@
                 <urn1:Parameter Name="memberof_nested_group" Value="false"/>
             </urn1:AttributeSource>
             <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
-                <urn1:TokenAuthorizationIssuanceCriterion AttrName="isMemberOf" AttrSourceId="PD" AttrSourceType="LDAP" ComparisonValue="cn=BankingUsers,ou=Groups,${USER_BASE_DN}" ErrorResult="Not member of BankingUsers" Expr="" Condition="multivalue-does-not-contain-dn"/>
+                <urn1:TokenAuthorizationIssuanceCriterion AttrName="isMemberOf" AttrSourceId="PD" AttrSourceType="LDAP" ComparisonValue="cn=BankingUsers,ou=AppOwner1-Groups,ou=Groups,${USER_BASE_DN}" ErrorResult="Not member of BankingUsers" Expr="" Condition="multivalue-does-not-contain-dn"/>
             </urn1:TokenAuthorizationIssuanceCriteria>
         </urn:UserInfoMapping>
         <urn:scopeAttributesMap/>
