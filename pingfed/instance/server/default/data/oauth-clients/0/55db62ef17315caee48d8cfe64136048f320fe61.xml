@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urn:Clients xmlns:urn="urn:pingidentity.com:pf:oauth:client">
-    <urn:Client client_id="PingCentral" name="PingCentral" logo="" secret="FA3ucZAwaBi25C2sPN7RmTjXetg_6GkeKqVa-ILDXbU.fCq04mBw.2" persistentGrantExpirationTime="0" enabled="true" lastModified="2019-10-16T05:22:17.344Z" bypassApprovalPage="false" restrictScopes="false" jwksUri="" jwks="" clientAuthnType="SECRET" enforceOneTimeJWT="false" isRequireSignedRequest="false">
+    <urn:Client client_id="PingCentral" name="PingCentral" logo="" secret="FA3ucZAwaBi25C2sPN7RmTjXetg_6GkeKqVa-ILDXbU.fCq04mBw.2" persistentGrantExpirationTime="0" enabled="true" lastModified="2019-10-16T05:22:17.344Z" bypassApprovalPage="true" restrictScopes="false" jwksUri="" jwks="" clientAuthnType="SECRET" enforceOneTimeJWT="false" isRequireSignedRequest="false">
         <urn:Description/>
         <urn:Grant type="refresh_token"/>
         <urn:Grant type="authorization_code"/>
