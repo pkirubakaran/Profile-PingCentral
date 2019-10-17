@@ -77,7 +77,7 @@ https://support.pingidentity.com/s/document-item?bundleId=pingdirectory-73&topic
 The logs can be seen with this command:  
 `docker-compose exec pingdirectory tail -f /opt/out/instance/logs/debug`
 
-**PingCentral**
+**PingCentral**  
 Clone the `pingcentral` folder and mount the appropriate volumes in `docker-compose.yaml`. These will provide the initial configuration for PingCentral
 
 Replace the dummy `volumes/conf/pingcentral.lic` with a valid one
