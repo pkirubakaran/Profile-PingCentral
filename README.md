@@ -15,6 +15,14 @@ In addition, the following Applications have been added that are designed to be 
 * `SAMLConnection1` -- SAML App with Issuance Criteira allowing only members of the `InsuranceUsers` group
 * `OIDCclient1` -- OIDC App with Issuance Criteria allowing only members of the `BankingUsers` group  
 
+**Authentication Type**  
+An Extended Properties selector has been added to the Policies to allow for the Application Owners to decide what Authentication Type they'd like to use -- this can be configured directly on the application.
+
+The following Types can be added:  
+* `Basic` -- Simple HTML Form
+* `Enhanced` -- Enhanced HTML Form with LIP (Note -- this is not wired up, just for show)
+* `PingID` -- Enhanced HTML Form with PingID  
+
 A set of PD users are also created and assigned Delegated Administrator roles:
 
 These users are created in `ou=Administrators` to demonstrate separating the Admins from the objects they have rights to.
