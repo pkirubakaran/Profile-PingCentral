@@ -38,6 +38,12 @@ cn: PFUserAdminGroup
 member: uid=administrator,ou=people,${USER_BASE_DN}
 member: uid=superadmin,ou=Administrators,${USER_BASE_DN}
 
+dn: cn=PCAdmins,ou=groups,${USER_BASE_DN}
+objectClass: groupOfNames
+objectClass: top
+cn: PCAdmins
+member: uid=superadmin,ou=Administrators,${USER_BASE_DN}
+
 dn: cn=PCAppOwners,ou=groups,${USER_BASE_DN}
 objectClass: groupOfNames
 objectClass: top
