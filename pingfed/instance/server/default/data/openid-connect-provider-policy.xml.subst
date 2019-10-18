@@ -10,10 +10,10 @@
     </urn:ProviderPolicyGroup>
     <urn:ProviderPolicyGroup policyId="OIDCPingCentral" idTokenLife="5" includeSriInIdToken="false" includeUserInfoInIdToken="false" includeSHashInIdToken="false" policyName="OIDC-PingCentral" accessTokenManagerId="JWTPingCentral">
         <urn:UserInfoMapping>
+            <urn1:AttributeMap Name="PingCentral-Role" Type="LDAP" AttributeSourceId="PD" Value="isMemberOf" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:AttributeMap Name="sub" Type="Token" Value="sub" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="givenName" Type="LDAP" AttributeSourceId="PD" Value="givenName" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="sn" Type="LDAP" AttributeSourceId="PD" Value="sn" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
-            <urn1:AttributeMap Name="PingCentral-Role" Type="LDAP" AttributeSourceId="PD" Value="employeeType" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
-            <urn1:AttributeMap Name="sub" Type="Token" Value="sub" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeSource Id="PD" Description="PD" Type="LDAP" DataSourceId="LDAP-D803C87FAB2ADFB4B0A947B64BA6F0C6093A5CA3" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
                 <urn1:Parameter Name="filter" Value="entryUUID=${_DOLLAR_}{sub}"/>
                 <urn1:Parameter Name="search_base" Value="${USER_BASE_DN}"/>
@@ -23,7 +23,20 @@
             <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
         </urn:UserInfoMapping>
         <urn:scopeAttributesMap/>
-        <urn:attributeContractInclusionMap/>
+        <urn:attributeContractInclusionMap>
+            <urn:item>
+                <urn:key>PingCentral-Role</urn:key>
+                <urn:value includeInIdToken="true" includeInUserInfo="false"/>
+            </urn:item>
+            <urn:item>
+                <urn:key>givenName</urn:key>
+                <urn:value includeInIdToken="true" includeInUserInfo="false"/>
+            </urn:item>
+            <urn:item>
+                <urn:key>sn</urn:key>
+                <urn:value includeInIdToken="true" includeInUserInfo="false"/>
+            </urn:item>
+        </urn:attributeContractInclusionMap>
     </urn:ProviderPolicyGroup>
     <urn:ProviderPolicyGroup policyId="OIDCBankingUsers" idTokenLife="5" includeSriInIdToken="false" includeUserInfoInIdToken="false" includeSHashInIdToken="false" policyName="OIDCBankingUsers" accessTokenManagerId="jwtHTML">
         <urn:UserInfoMapping>
