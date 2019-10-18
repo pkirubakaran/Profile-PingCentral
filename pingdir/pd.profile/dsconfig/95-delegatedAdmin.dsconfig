@@ -16,6 +16,9 @@ dsconfig create-delegated-admin-attribute --type-name users --attribute-type ds-
 dsconfig create-delegated-admin-attribute --type-name groups --attribute-type cn --set "display-name:Group"
 dsconfig create-delegated-admin-attribute --type-name groups --attribute-type description --set "display-name:Description"
 
+# Adding for PingCentral Role management
+dsconfig create-delegated-admin-attribute --type-name users --attribute-type employeeType --set "display-name:PingCentral Role" --set display-order-index:4 
+
 #
 # Complete the configuration of the Delegated Admin API.
 #
