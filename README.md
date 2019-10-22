@@ -62,7 +62,7 @@ Note: Roles are designated on the `employeeType` attribute of a User in PD (This
 * `IAM-Admin` -- PingCentral Administrator
 * `Application-Owner` -- Application Owner
 
-**PingFed Administrator**
+**PingFed Administrator**  
 PingFed can be directly managed using the Admin UI (`https://{{docker host}}:9999/pingfederate`)  
 
 * `superadmin` \ `2FederateM0re`  
