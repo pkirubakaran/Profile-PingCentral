@@ -57,7 +57,10 @@ Use the PingCentral app (`https://{{docker host}}:9022`)
 * `superadmin` \ `2FederateM0re` (PC-Role == IAM-Admin)  
 * `appowner1` \ `2FederateM0re` (PC-Role == Application-Owner)  
 
-Note: Roles are desgnated on the `employeeType` attribute of a User in PD
+Note: Roles are designated on the `employeeType` attribute of a User in PD (This is exposed as `PingCentral Role` in Delegator)
+
+* `IAM-Admin` -- PingCentral Administrator
+* `Application-Owner` -- Application Owner
 
 **PingFed Administrator**
 PingFed can be directly managed using the Admin UI (`https://{{docker host}}:9999/pingfederate`)  
