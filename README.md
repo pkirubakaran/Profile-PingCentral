@@ -2,8 +2,6 @@ This Server profile shows a complete install of PingFederate \ PingDirectory \ P
 
 The Delegator is installed and delivered via PingDirectory.  
 
-`https://{{PingDirectory}}:1443/delegator`
-
 PingFed is configured with 3 OAuth clients that are used for Service logons:
 * PingLogon -- used to authenticate a user and issue tokens for Delegator (AuthZ Code \ Implicit)
 * PingCentral -- used to authenticate and issue tokens for PingCentral (has an OIDC policy to populate the PC-Role claim)
@@ -69,7 +67,7 @@ PingFed can be directly managed using the Admin UI (`https://{{docker host}}:999
 
 **PingDirectory Administration**
 
-PingDirectory can be configured using the PingData console (`https://{{PingDataConsole}}:8443/console`)  
+PingDirectory can be configured using the PingData console (`https://{{docker host}}:8443/console`)  
 
 * Server: `pingdirectory`
 * User: `Administrator`
