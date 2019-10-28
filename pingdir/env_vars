@@ -29,7 +29,7 @@ ROOT_USER_PASSWORD_FILE=${BASE}/staging/pwd
 # The replication administrator password file
 ADMIN_USER_PASSWORD_FILE=${ROOT_USER_PASSWORD_FILE}
 
-USER_ORG_BASE=example.com
+USER_ORG_BASE=example,dc=com
 
 # The user base dn may be provided (Default: dc=example,dc=com)
 USER_BASE_DN=dc=${USER_ORG_BASE}
