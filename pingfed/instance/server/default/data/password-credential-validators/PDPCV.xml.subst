@@ -5,7 +5,7 @@
         <urn:Field name="Search Base">${USER_BASE_DN}</urn:Field>
         <urn:Field name="Search Filter">(|(uid=${_DOLLAR_}{username})(mail=${_DOLLAR_}{username}))</urn:Field>
         <urn:Field name="Scope of Search">Subtree</urn:Field>
-        <urn:Field name="Case-Sensitive Matching">true</urn:Field>
+        <urn:Field name="Case-Sensitive Matching">false</urn:Field>
         <urn:Field name="Display Name Attribute">displayName</urn:Field>
         <urn:Field name="Mail Attribute">mail</urn:Field>
         <urn:Field name="SMS Attribute"/>
