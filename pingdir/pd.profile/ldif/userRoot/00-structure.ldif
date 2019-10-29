@@ -1,7 +1,7 @@
 dn: ${USER_BASE_DN}
 objectClass: top
 objectClass: domain
-dc: example
+dc: ${USER_BASE_DN}
 aci: (targetattr="userPassword")(version 3.0; acl "Allow users to update their own password"; allow (write) userdn="ldap:///self";)
 
 dn: ou=people,${USER_BASE_DN}
