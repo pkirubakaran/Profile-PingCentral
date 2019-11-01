@@ -13,6 +13,7 @@ objectClass: organizationalUnit
 ou: People
 
 dn: ou=groups,${USER_BASE_DN}
+aci: (targetattr="*")(version 3.0; acl "Allow the pingfederate user to do everything in this branch"; allow(all) userdn="ldap:///cn=pingfederate,cn=root dns,cn=config";)
 objectClass: top
 objectClass: organizationalUnit
 ou: groups
