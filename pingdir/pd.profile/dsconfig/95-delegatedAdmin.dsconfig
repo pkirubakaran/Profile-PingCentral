@@ -29,7 +29,7 @@ dsconfig set-rest-resource-type-prop --type-name users --set enabled:true
 dsconfig set-rest-resource-type-prop --type-name groups --set enabled:true 
 
 # Configure Resources for AppOwner1
-dsconfig create-rest-resource-type --type-name AppOwner1-Groups --type group --set "description:Used to grant access to Groups that are linked to App Owner 1" --set enabled:true --set resource-endpoint:appowner1 --set structural-ldap-objectclass:groupOfNames --set search-base-dn:ou=AppOwner1,ou=AppOwner-Groups,ou=Groups,${USER_BASE_DN} --set "display-name:App Owner 1 - Groups" --set parent-dn:ou=AppOwner1-Groups,ou=Groups,dc=example,dc=com --set "search-filter-pattern:(cn=*%%*)" --set primary-display-attribute-type:cn  --set create-rdn-attribute-type:cn 
+dsconfig create-rest-resource-type --type-name AppOwner1-Groups --type AppOwnerGroup --set "description:Used to grant access to Groups that are linked to App Owner 1" --set enabled:true --set resource-endpoint:groups --set structural-ldap-objectclass:groupOfNames --set search-base-dn:ou=AppOwner1,ou=AppOwner-Groups,${USER_BASE_DN} --set "display-name:App Owner 1 - Groups" --set parent-dn:ou=AppOwner1,ou=AppOwner-Groups,${USER_BASE_DN} --set "search-filter-pattern:(cn=*%%*)" --set primary-display-attribute-type:cn  --set create-rdn-attribute-type:cn 
 dsconfig create-delegated-admin-attribute --type-name AppOwner1-Groups --attribute-type cn --set "display-name:Group"
 dsconfig create-delegated-admin-attribute --type-name AppOwner1-Groups --attribute-type description --set "display-name:Description"
 
