@@ -43,7 +43,7 @@ This account has the following rights:
 This stack can be used as a demo of several Self-Sevice use cases:
 
 **User Administration**  
-Use the Ping Delegator app (`https://{{DELEGATOR_PUBLIC_URL}}:8443/delegator`)
+Use the Ping Delegator app (`https://{{DELEGATOR_PUBLIC_CORS}}:1443/delegator`)
 
 * `superadmin` \ `2FederateM0re` (All objects)
 * `useradmin` \ `2FederateM0re`  (User objects)
