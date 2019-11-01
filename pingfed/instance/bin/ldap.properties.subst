@@ -5,10 +5,10 @@ ldap.connectTimeout=10000
 ldap.readTimeout=3000
 search.base=${USER_BASE_DN}
 search.filter=(uid={0})
-role.admin=
-role.cryptoManager=
+role.admin=uid=superadmin,ou=administrators,${USER_BASE_DN}
+role.cryptoManager=uid=superadmin,ou=administrators,${USER_BASE_DN}
 role.auditor=
-role.userAdmin=
+role.userAdmin=uid=superadmin,ou=administrators,${USER_BASE_DN}
 role.search.user.attribute=isMemberOf
 role.search.attribute=<DN>
 role.search.base=ou=Groups,${USER_BASE_DN}
