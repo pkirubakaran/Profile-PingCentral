@@ -52,5 +52,5 @@ ENCRYPTION_PASSWORD_FILE=${ROOT_USER_PASSWORD_FILE}
 #TAIL_LOG_FILES="/opt/out/instance/logs/access /opt/out/instance/logs/audit"
 
 # For Delegator
-PF_BASE_HOST=https://ext-docker.cpricelab.com
+PF_BASE_HOST=ext-docker.cpricelab.com
 PF_BASE_PORT=9031
