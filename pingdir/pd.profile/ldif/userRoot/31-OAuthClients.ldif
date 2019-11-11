@@ -23,7 +23,7 @@ pf-oauth-client-supplemental-info: 16:EXCLUSIVE_SCOPES:null
 pf-oauth-client-supplemental-info: 7:ENABLED:true
 pf-oauth-client-supplemental-info: 23:USER_AUTHZ_URL_OVERRIDE:null
 pf-oauth-client-supplemental-info: 30:PENDING_AUTHZ_TIMEOUT_OVERRIDE:null
-pf-oauth-client-supplemental-info: 24:vnd.ping.policy_group_id:null
+pf-oauth-client-supplemental-info: 24:vnd.ping.policy_group_id:OIDCPingCentral
 pf-oauth-client-supplemental-info: 28:id_token_signed_response_alg:null
 pf-oauth-client-supplemental-info: 18:pf_ecm_authnExp_00:Enhanced
 pf-oauth-client-id: PingCentral
