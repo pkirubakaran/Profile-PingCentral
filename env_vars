@@ -1,10 +1,13 @@
-DOCKER_HOST=localhost
-
 # BaseURL of the PingFed service
-PF_BASE_URL=https://${DOCKER_HOST}:9031
-# URL of the Delegated Admin app -- Used to create the CORS Allowed-Origins setting
-DELEGATOR_PUBLIC_URL=https://${DOCKER_HOST}:1443/delegator
-PD_DELEGATOR_PUBLIC_HOSTNAME=${DOCKER_HOST}
+PF_BASE_URL=https://{Your Docker Host}:9031
 
-# Hostname of the PingFed service being used for Delegated Admin -- Delegator uses this to construct the OIDC calls
-PF_BASE_HOST=${DOCKER_HOST}
+# URL of the Delegated Admin app -- Used to create the CORS Allowed-Origins setting
+DELEGATOR_PUBLIC_URL=https://{Your Docker Host}:1443/delegator
+PD_DELEGATOR_PUBLIC_HOSTNAME={Your Docker Host}
+
+# Hostname \ Port of the PingFed service being used for Delegated Admin -- Delegator uses this to construct the OIDC calls
+PF_BASE_HOST={Your Docker Host}
+PF_BASE_HOST=9031
+
+# PD Base DN
+USER_BASE_DN=dc=example.com
