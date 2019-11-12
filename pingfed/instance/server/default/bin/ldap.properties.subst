@@ -1,6 +1,6 @@
 ldap.url=ldap://pingdirectory:389
 ldap.username=cn=pingfederate
-ldap.password=OBF:JWE:eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2Iiwia2lkIjoiRW1JY1UxOVdueSIsInZlcnNpb24iOiI5LjIuMS4xIn0..ZLVmgXJVySez9CFG-XpFjA.rSvFI6kQuVjdUVpRYZQfyg.YIs9McL1ZipQCkIuIWvnwQ
+ldap.password=2FederateM0re
 ldap.connectTimeout=10000
 ldap.readTimeout=3000
 search.base=ou=people,${USER_BASE_DN}
