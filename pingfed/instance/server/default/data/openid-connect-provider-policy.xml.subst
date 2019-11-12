@@ -54,4 +54,20 @@
         <urn:scopeAttributesMap/>
         <urn:attributeContractInclusionMap/>
     </urn:ProviderPolicyGroup>
+    <urn:ProviderPolicyGroup policyId="OAuthPlayground" idTokenLife="5" includeSriInIdToken="false" includeUserInfoInIdToken="false" includeSHashInIdToken="false" policyName="OAuthPlayground" accessTokenManagerId="jwtHTML">
+        <urn:UserInfoMapping>
+            <urn1:AttributeMap Name="sub" Type="Token" Value="sub" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        </urn:UserInfoMapping>
+        <urn:scopeAttributesMap/>
+        <urn:attributeContractInclusionMap/>
+    </urn:ProviderPolicyGroup>
+    <urn:ProviderPolicyGroup policyId="pingdelegator" idTokenLife="5" includeSriInIdToken="false" includeUserInfoInIdToken="false" includeSHashInIdToken="false" policyName="pingdelegator" accessTokenManagerId="jwtHTML">
+        <urn:UserInfoMapping>
+            <urn1:AttributeMap Name="sub" Type="Token" Value="sub" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        </urn:UserInfoMapping>
+        <urn:scopeAttributesMap/>
+        <urn:attributeContractInclusionMap/>
+    </urn:ProviderPolicyGroup>
 </urn:OpenIdConnectProviderPolicy>
