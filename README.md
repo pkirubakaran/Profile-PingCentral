@@ -74,7 +74,7 @@ PingDirectory can be configured using the PingData console (`https://{{docker ho
 * Pwd: `2FederateM0re`
 
 ## Deployment - Docker Compose
-This repo has a configuration for PignCentral that needs to be directly injected into the PC service. 
+This repo has a configuration for PingCentral that needs to be directly injected into the PC service. 
 
 To deploy these Profiles, do the following:
 * On a Docker Compose host, run `git clone https://github.com/cprice-ping/Profile-PingCentral`
