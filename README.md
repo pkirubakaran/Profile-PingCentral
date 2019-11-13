@@ -74,29 +74,15 @@ PingDirectory can be configured using the PingData console (`https://{{docker ho
 * Pwd: `2FederateM0re`
 
 ## Deployment - Docker Compose
-Environment variables in the `docker-compose.yaml` can be modified to inject the correct locations into this stack
+This repo has a configuration for PignCentral that needs to be directly injected into the PC service. 
 
-To implement this Use Case, download the `docker-compose.yaml` file and run `docker-compose up -d`
-
-A sample `yaml` file for `localhost` is also provided -- rename `docker-compose-locahost.yaml` to `docker-compose.yaml`
-
-DelAdmin trace logging has been enabled:  
-https://support.pingidentity.com/s/document-item?bundleId=pingdirectory-73&topicId=hld1564011489908.html
-
-The logs can be seen with this command:  
-`docker-compose exec pingdirectory tail -f /opt/out/instance/logs/debug`
-
-**PingCentral**  
-Clone the `pingcentral` folder and mount the appropriate volumes in `docker-compose.yaml`. These will provide the initial configuration for PingCentral
-
-Replace the dummy `volumes/conf/pingcentral.lic` with a valid one
-
-PingCentral will fail on the initial standing of the stack -- this if for a couple of reasons:
-* PingCentral requires that the OIDC Provider (PingFed) is available when it starts up
-* PingCentral SSO requires that the OIDC Provider is using a valid SSL certificate
-
-If you're using SSO (this setting is controlled in the `/pingcentral/volume/conf/application.properties` file) you need to add a certificate to PingFed --> Security --> SSL Server and make it active.
-
-The `application.properties` file is injected with a mounted volume -- make sure that the path in `docker-compose.yaml` reflects the local location.
-
-Once the certificate is installed in the OP, and the volume is properly created \ referenced, run `docker compose up -d` to re-introduce PingCentral back into the stack
+To deploy these Profiles, do the following:
+* On a Docker Compose host, run `git clone https://github.com/cprice-ping/Profile-PingCentral`
+* Edit the `./pingcentral/volumes/conf/application.properties` file
+** You'll need your Token Issuer (PingFed BaseURL) substituted in `{{Your OIDC Issuer}}`
+* Replace the dummy `./pingcentral/volumes/conf/pingcentral.lic` with a valid one
+* Edit the `./env_vars` file to reflect your Docker Compose host information 
+* Run `docker-compose up -d`
+  * Note: PingCentral will fail due to PF not being up when it starts
+* Wait for PingFederate to start up (`docker-compose logs -f pingfederate`)
+* Run `docker-compose up -d` to start PingCentral 
