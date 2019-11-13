@@ -79,7 +79,7 @@ This repo has a configuration for PignCentral that needs to be directly injected
 To deploy these Profiles, do the following:
 * On a Docker Compose host, run `git clone https://github.com/cprice-ping/Profile-PingCentral`
 * Edit the `./pingcentral/volumes/conf/application.properties` file
-** You'll need your Token Issuer (PingFed BaseURL) substituted in `{{Your OIDC Issuer}}`
+** You'll need your Token Issuer (PingFed BaseURL) substituted in `{Your OIDC Issuer}`
 * Replace the dummy `./pingcentral/volumes/conf/pingcentral.lic` with a valid one
 * Edit the `./env_vars` file to reflect your Docker Compose host information 
 * Run `docker-compose up -d`
