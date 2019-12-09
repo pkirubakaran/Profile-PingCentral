@@ -10,7 +10,7 @@ PD_DELEGATOR_PUBLIC_HOSTNAME={Your Docker Host}
 
 # Hostname \ Port of the PingFed service being used for Delegated Admin -- Delegator uses this to construct the OIDC calls
 PF_BASE_HOST={Your Docker Host}
-PF_BASE_HOST=9031
+PF_BASE_PORT=9031
 
 # PD Base DN
 USER_BASE_DN=dc=example.com
