@@ -1,15 +1,15 @@
 # BaseURL of the PingFed service
-PF_BASE_URL=https://{Your Docker Host}:9031
+PF_BASE_URL=https://10.101.1.214:9031
 
 # PF Logging Level
 PF_LOG_LEVEL=INFO
 
 # URL of the Delegated Admin app -- Used to create the CORS Allowed-Origins setting
-DELEGATOR_PUBLIC_URL=https://{Your Docker Host}:1443/delegator
-PD_DELEGATOR_PUBLIC_HOSTNAME={Your Docker Host}
+DELEGATOR_PUBLIC_URL=https://10.101.1.214:1443/delegator
+PD_DELEGATOR_PUBLIC_HOSTNAME=10.101.1.214
 
 # Hostname \ Port of the PingFed service being used for Delegated Admin -- Delegator uses this to construct the OIDC calls
-PF_BASE_HOST={Your Docker Host}
+PF_BASE_HOST=10.101.1.214
 PF_BASE_PORT=9031
 
 # PD Base DN
