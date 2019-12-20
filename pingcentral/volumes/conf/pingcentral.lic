@@ -1,1 +1,10 @@
-Paste your actual PingCentral license information here
+ID=1452926
+Organization=68
+Product=PingCentral
+Version=1.0
+IssueDate=2019-10-25
+EnforcementType=0
+ExpirationDate=2020-11-24
+Tier=Perpetual
+SignCode=FF
+Signature=302C02147FB1DCCE91A5A0EADF15C88555057CC4B52AA1F602143CB578123D6EEFF20DF998CCC36299A7ACF4B8B5
