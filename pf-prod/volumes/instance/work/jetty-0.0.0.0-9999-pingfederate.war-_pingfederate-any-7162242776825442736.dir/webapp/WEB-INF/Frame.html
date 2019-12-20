@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html jwcid="shell" xmlns="http://www.w3.org/1999/xhtml">
+<link href="images/favicon.ico?v=4" rel="shortcut icon" type="image/x-icon"/>
+<style>body { display:none }</style>
+
+<script type="text/javascript" src="scripts/v5/DOM_Fixes_2.js"></script>
+<script type="text/javascript" src="scripts/v5/auto-scroll.js"></script>
+<script type="text/javascript" src="scripts/v5/textfield_ops.js"></script>
+<script type="text/javascript" src="scripts/v5/context-help.js"></script>
+<script type="text/javascript" src="scripts/v5/js.cookie.js"></script>
+<script type="text/javascript" src="scripts/v5/jquery-ui.min.js"></script>
+<script type="text/JavaScript" src="scripts/v5/selection.js"></script>
+<script type="text/javascript" src="scripts/v5/tooltip.js"></script>
+<script type="text/JavaScript" src="scripts/v5/required.js" defer></script>
+<!--
+    Prevent users from double submitting a form by disabling the button that was click as well as
+    any other related buttons in that section.
+-->
+<script>
+    $(document).ready(function(){
+        $('form#wrapperForm').find(':submit').click(function(evt){
+           setTimeout(function() {
+               $(evt.target.parentElement).find(":input").attr('disabled', true);
+           }, 50)
+        });
+    });
+</script>
+
+<script>
+    var link;
+    function areYouSure(element) {
+        var dialogBox = $(element).parent().find('.dialog');
+        link = element.href;
+        dialogBox.dialog({
+            resizable: false,
+            height: "auto",
+            width: 400,
+            modal: true,
+            position:{ my: "center", at: "top+200px"} ,
+            title: "Warning!",
+            beforeClose: function (event, ui) {
+                $(this).dialog("destroy");
+            },
+            buttons: {
+                Cancel: {
+                    id: 'cancel', text: 'Cancel', "class": "cancel", click: function () {
+                        $(this).dialog("close");
+                        link = "";
+                    }
+                },
+                "Yes": {
+                    id: 'yes', text: 'Confirm', "class": "primary", click: function () {
+                        window.location.href = link;
+                        $(this).dialog("close");
+                        link = "";
+                    }
+                }
+            }
+        });
+
+        return false;
+    }
+</script>
+
+<body jwcid="@Body" class="ognl:page.visit.currentTasklet.isFullWidth() ? 'full-width' : ''">
+    <span jwcid="@Conditional" condition="ognl:page.visit.currentTasklet.isBridgeMode()">
+        <span jwcid="@Insert" value="ognl:page.visit.currentTasklet.getBridgeDiv()" raw="true"/>
+    </span>
+    <form id="wrapperForm" jwcid="form" listener="ognl:listeners.formListener" onkeypress="formKeyPress( event )">
+        <hidden jwcid="taskletStateId@Hidden" value="ognl:taskletStateId" encode="false"/>
+        <hidden jwcid="cSRFToken@Hidden" value="ognl:cSRFToken" encode="false"/>
+
+        <span jwcid="@contrib:Choose">
+            <span jwcid="@contrib:When" condition="ognl:!page.visit.currentTasklet.isFullWidth()">
+                <!-- NEW NAV -->
+                <div id="nav">
+                    <div jwcid="@Any" class="ognl:page.visit.currentTasklet.isShowMainLinks() ? 'title' : 'title hidden-for-bridge-radius'">
+                        MAIN
+                    </div>
+                    <ul class="menu">
+                        <!-- need jwcid link to main -->
+                        <span jwcid="@Conditional" condition="ognl:page.visit.currentState.isEnableIdP() && page.visit.currentState.isPartnerVisible()">
+                            <li jwcid="@Any" class="ognl:page.visit.currentTasklet.isShowMainLinks() ? 'nav-idp' : 'nav-idp hidden-for-bridge-radius'">
+                                <a href="/pingfederate/app?service=direct/1/Home/$HeadCrumbs.directX&sp=SMain" data-nav="idp"><span class="icon-uil-login_system-idp"></span>Identity Provider</a>
+                            </li>
+                        </span>
+                        <span jwcid="@Conditional" condition="ognl:page.visit.currentState.isEnableSP() && page.visit.currentState.isPartnerVisible()">
+                            <li class="nav-sp"><a href="/pingfederate/app?service=direct/1/Home/$HeadCrumbs.directX&sp=SMain" data-nav="sp"><span class="icon-uil-browser"></span>Service Provider</a></li>
+                        </span>
+                        <span jwcid="@Conditional" condition="ognl:page.visit.currentState.isEnableOauth() && page.visit.currentState.isPartnerVisible()">
+                            <li class="nav-oauth"><a href="/pingfederate/app?service=direct/1/Home/$HeadCrumbs.directX&sp=SMain" data-nav="oauth"><span class="icon-uil-api_token-as"></span>OAuth Server</a></li>
+                        </span>
+                    </ul>
+                    <div class="title">
+                        SETTINGS
+                    </div>
+                    <ul class="menu">
+                        <span jwcid="@Conditional" condition="ognl:page.visit.currentState.isSecurityVisible()">
+                            <li class="nav-security"><a href="/pingfederate/app?service=direct/1/Home/$HeadCrumbs.directX&sp=SMain" data-nav="security"><span class="icon-uil-lock-large"></span>Security</a></li>
+                        </span>
+                    </ul>
+                    <ul class="menu">
+                        <li class="nav-system"><a href="/pingfederate/app?service=direct/1/Home/$HeadCrumbs.directX&sp=SMain" data-nav="system"><span class="icon-uil-slider"></span>System</a></li>
+                    </ul>
+
+                    <div class="copyright">
+                        Copyright &copy; 2003-2019<br>
+                        Ping Identity Corporation<br>
+                        All rights reserved<br>
+                        Version <span jwcid="@common:VersionComponent"/>
+                    </div>
+                </div>
+            </span>
+            <span jwcid="@contrib:Otherwise">
+                <div class="copyright">
+                    Copyright &copy; 2003-2019<br>
+                    Ping Identity Corporation<br>
+                    All rights reserved<br>
+                    Version <span jwcid="@common:VersionComponent"/>
+                </div>
+            </span>
+        </span>
+
+
+        <table class="structure">
+            <tr><td colspan="3"></td></tr>
+            <tr>
+                <td></td>
+                <td><span class="logo">
+                        <b>PingFederate</b>
+                        <sup>
+                            <font size="1.5mm">®</font>
+                        </sup>
+                    </span>
+                    <span jwcid="@Conditional" condition="ognl:page.visit.currentTasklet.isBridgeMode()">
+                        <span class="qualifier">
+                            Bridge
+                        </span>
+                    </span>
+                    <div class="topnav">
+                        <ul>
+                            <li>
+                                <a jwcid="helpLink" data-nav="help"><span class="icon-help"></span></a>
+                            </li>
+                            <li class="icon-account">
+                                <ul class="dropdown-menu">
+                                    <li class="nav-about"><a jwcid="aboutLink" data-nav="about">About</a></li>
+                                    <span jwcid="@contrib:FormConditional" condition="ognl:!page.visit.currentTasklet.isInitialSetup()">
+                                        <li class="nav-logout">
+                                            <a jwcid="onLogout" data-nav="logout">Sign Out
+                                                (<span jwcid="@Insert" value="ognl:page.visit.currentUser.userName"/>)
+                                            </a>
+                                        </li>
+                                    </span>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="content" colspan="2">
+
+                    <table>
+                        <tr>
+                            <td class="topnav">
+                                <span>
+                                    <span jwcid="@contrib:FormConditional" condition="ognl:page.visit.currentTasklet.isProtocolImgAvailable()">
+                                        <span jwcid="protocolImage"/>
+                                    </span>
+                                    &nbsp;&nbsp;<span jwcid="@common:ConfigurationLabel"/>
+                                </span>
+                            </td>
+                    	</tr>
+                    </table>
+
+                    <span jwcid="@contrib:FormConditional" condition="ognl:!page.visit.currentTasklet.isInitialSetup()">
+                        <span class="message-component"><span jwcid="@common:BannerMessageComponent" /></span>
+                    </span>
+
+                    <span jwcid="@contrib:FormConditional" condition="ognl:! page.visit.currentTasklet.isItPortal()">
+                        <span jwcid="@contrib:FormConditional" condition="ognl:! page.visit.currentTasklet.isPostInstallWizard()">
+                               <div class="headcrumbs" NOWRAP>
+                                <span jwcid="@common:HeadCrumbs"/>
+                            </div>
+                        </span>
+                        <div class="breadcrumbs">
+                            <span jwcid="@common:BreadCrumbs"/>
+                        </div>
+                    </span>
+                   <span jwcid="validationErrors"/>
+                   <span jwcid="@contrib:FormConditional" condition="ognl:page.visit.currentState.isShowNote()">
+                        <div class="messagetext">
+                        <img src="images/notes_icon.gif" width="12" height="12" border="0" class="icon-note">
+                        &nbsp;<span jwcid="@Insert" raw="true" value="ognl:note"/>
+                        </div>
+                    </span>
+                    <span jwcid="@common:CardRenderer"/>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="footer" colspan="2">
+
+                    <div class="buttons">
+
+                        <!-- 1: Cancel -->
+                        <span jwcid="@contrib:FormConditional" condition="ognl:page.visit.currentTasklet.cancelAvailable">
+                            <input jwcid="cancel@Submit" label="Cancel" id="cancelButton" class="default link cancel" listener="ognl:listeners.onCancel" onclick="ieReset()" onFocus="ignoreKeyPress(true)" />
+                        </span>
+
+                        <!-- 4: Save Draft -->
+                        <span jwcid="@contrib:FormConditional" condition="ognl:page.visit.currentTasklet.showSaveDraftButton()">
+                            <input jwcid="saveDraft@Submit" label="Save Draft" class="secondary" id="saveDraftButton" selected="ognl:submitListener" tag="ognl:listeners.onSaveDraft" onFocus="ignoreKeyPress(true)"/>
+                        </span>
+
+                        <!-- 2: Previous -->
+                        <span jwcid="@contrib:FormConditional" condition="ognl:page.visit.currentTasklet.previousAvailable">
+                            <input jwcid="previous@Submit" label="Previous" id="previousButton" class="default" type="submit" listener="ognl:listeners.onPrevious"
+                                disabled="ognl:page.visit.currentTasklet.isPreviousDisabled()" onFocus="ignoreKeyPress(true)"/>
+                        </span>
+
+                        <!-- 3: Next -->
+                        <span jwcid="@contrib:FormConditional" condition="ognl:page.visit.currentTasklet.nextAvailable">
+                            <input jwcid="next@Submit" label="Next" id="nextButton" class="ognl:page.visit.currentTasklet.isPrimaryAction('Next') ? 'primary' : 'default'" selected="ognl:submitListener" tag="ognl:listeners.onNext"
+                                disabled="ognl:!page.visit.currentTasklet.isNextEnabled()" onFocus="ignoreKeyPress(false)" />
+                        </span>
+
+                        <!-- 5: Done : Save -->
+                        <span jwcid="@contrib:FormConditional" condition="ognl:page.visit.currentTasklet.isFinishAvailable()">
+                            <input jwcid="finish@Submit" label="ognl:page.visit.currentTasklet.finishLabel" id="ognl:page.visit.currentTasklet.getFinishId()" class="ognl:page.visit.currentTasklet.isPrimaryAction('Done') ? 'primary' : 'default'" selected="ognl:submitListener" tag="ognl:listeners.onFinish" onFocus="ignoreKeyPress(true)"/>
+                        </span>
+
+                        <!-- 6: Save -->
+                        <span jwcid="@contrib:FormConditional" condition="ognl:page.visit.currentTasklet.showSaveAll()">
+                            <input jwcid="finishAll@Submit" label="Save" id="SaveAll" class="ognl:page.visit.currentTasklet.isPrimaryAction('Save') ? 'primary' : 'default'" selected="ognl:submitListener" tag="ognl:listeners.onFinishAll" onFocus="ignoreKeyPress(true)"/>
+                        </span>
+
+                    </div>
+                </td>
+            </tr>
+            <tr class="arc-copyright">
+                <td></td>
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="version">&copy; 2003-2019 Ping Identity Corporation All Rights Reserved<br>Version <span jwcid="@common:VersionComponent"/></td>
+                                <td class="version">
+                                    <span jwcid="@branded:PingLogo"/>
+                                </td>
+                          </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script type="text/javascript">
+        // If a user clicks enter, find the primary button (blue button) and click it.
+        $(document).ready(function(){
+            $("body").keypress(function (e){
+                if(e.keyCode === 13 && e.target.type != "textarea"){
+                    e.preventDefault();
+                    $('.primary').click();
+                }
+            })
+        });
+    </script>
+    <span jwcid="@Conditional" condition="ognl:page.visit.currentTasklet.isBridgeMode()">
+        <span jwcid="@Insert" value="</div>" raw="true"/>
+    </span>
+</body>
+</html>

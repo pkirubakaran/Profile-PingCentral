@@ -1,0 +1,81 @@
+<html jwcid="shell">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="images/favicon.ico?v=4" rel="shortcut icon" type="image/x-icon"/>
+</head>
+<body>
+	
+	<div id="header-container">
+		<span class="logo">
+			<b>PingFederate</b>
+			<sup>
+				<font size="1.5mm">®</font>
+			</sup>
+		</span>
+	</div>
+	
+	<table class="interior popup">
+        <tr>
+            <td width="250"><h2>Certificate Settings</h2></td>
+            <td></td>
+        </tr>
+		<tr>
+			<td><h2>Alias</h2></td>
+			<td><span jwcid="@InsertText" value="ognl:alias"/></td>
+		</tr>
+		<tr>
+			<td><h2>Serial Number</h2></td>
+			<td><span jwcid="@InsertText" value="ognl:serialNum"/></td>
+		</tr>
+		<tr>
+			<td><h2>Subject DN</h2></td>
+			<td><span jwcid="@InsertText" value="ognl:subjectDN"/></td>
+		</tr>
+		<tr>
+			<td><h2>Subject Alternative Names</h2></td>
+			<td><span jwcid="@InsertText" value="ognl:subjectAlternativeNames"/></td>
+		</tr>
+		<tr>
+			<td><h2>Issuer DN</h2></td>
+			<td><span jwcid="@InsertText" value="ognl:issuerDN"/></td>
+		</tr>
+		<tr>
+			<td><h2>Valid From</h2></td>
+			<td><span jwcid="@InsertText" value="ognl:validFrom"/></td>
+		</tr>
+		<tr>
+			<td><h2>Valid Until</h2></td>
+			<td><span jwcid="@InsertText" value="ognl:validUntil"/></td>
+		</tr>
+		<tr>
+			<td><h2>Signature Algorithm</h2></td>
+			<td><span jwcid="@InsertText" value="ognl:sigAlgName"/></td>
+		</tr>
+		<tr>
+			<td><h2>Version</h2></td>
+			<td><span jwcid="@InsertText" value="ognl:version"/></td>
+		</tr>
+		<tr>
+			<td><h2>SHA1 Fingerprint</h2></td>
+			<td><span jwcid="@InsertText" value="ognl:fingerprintSHA1"/></td>
+		</tr>
+		<tr>
+			<td><h2>SHA256 Fingerprint</h2></td>
+			<td><span jwcid="@InsertText" value="ognl:fingerprintSHA256"/></td>
+		</tr>
+        <tr>
+            <td><h2>Key Details</h2></td>
+            <td><span jwcid="@InsertText" value="ognl:keyDetails"/></td>
+        </tr>
+		
+		<span jwcid="@Conditional" condition="ognl:isRevoked()">
+			<tr>
+				<td><h2>Status</h2></td>
+				<td>Revoked</td>
+			</tr>
+        </span>
+		
+	</table>
+	
+</body>
+</html>

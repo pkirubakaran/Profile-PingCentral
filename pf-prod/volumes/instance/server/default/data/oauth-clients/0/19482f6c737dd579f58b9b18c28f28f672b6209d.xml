@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urn:Clients xmlns:urn="urn:pingidentity.com:pf:oauth:client">
+    <urn:Client client_id="MultiFactorInternalApp" name="MultiFactorInternalApp" logo="" secret="K51u1dDFT-0ctx8sVNTid4gf2EFuaTIGMm1Dpmvmw38.zPa52bmw.2" persistentGrantExpirationTime="0" enabled="true" lastModified="2019-10-04T12:21:49.374Z" bypassApprovalPage="true" restrictScopes="true" jwksUri="" jwks="" clientAuthnType="SECRET" enforceOneTimeJWT="false" isRequireSignedRequest="false">
+        <urn:Description/>
+        <urn:Grant type="refresh_token"/>
+        <urn:Grant type="implicit"/>
+        <urn:Grant type="client_credentials"/>
+        <urn:Grant type="authorization_code"/>
+        <urn:RedirectUri>https://localhost</urn:RedirectUri>
+        <urn:RestrictedScope>address</urn:RestrictedScope>
+        <urn:RestrictedScope>email</urn:RestrictedScope>
+        <urn:RestrictedScope>openid</urn:RestrictedScope>
+        <urn:RestrictedScope>phone</urn:RestrictedScope>
+        <urn:RestrictedScope>profile</urn:RestrictedScope>
+        <urn:SupplementalInfo key="ALLOW_EXCLUSIVE_SCOPES" value="false"/>
+        <urn:SupplementalInfo key="DEVICE_FLOW_SETTING" value="SERVER_DEFAULT"/>
+        <urn:SupplementalInfo key="DEFAULT_ATM_ID" value="OasisAT01"/>
+        <urn:SupplementalInfo key="PING_ACCESS_LOGOUT_CAPABLE" value="false"/>
+        <urn:SupplementalInfo key="RESTRICT_RESPONSE_TYPES" value="false"/>
+        <urn:SupplementalInfo key="REQUIRE_PROOF_KEY_FOR_CODE_EXCHANGE" value="false"/>
+        <urn:SupplementalInfo key="ACCESS_SESSION_REVOCATION_API" value="false"/>
+        <urn:SupplementalInfo key="PERSISTENT_GRANT_IDLE_TIMEOUT_TYPE" value="SERVER_DEFAULT"/>
+        <urn:SupplementalInfo key="VALIDATE_USING_ALL_ELIGIBLE_ATMS" value="false"/>
+        <urn:SupplementalInfo key="pf_ecm_LOA_00" value="MultiFactor"/>
+        <urn:SupplementalInfo key="ENABLED" value="true"/>
+        <urn:SupplementalInfo key="vnd.ping.policy_group_id" value="OasisOIDC01"/>
+    </urn:Client>
+</urn:Clients>

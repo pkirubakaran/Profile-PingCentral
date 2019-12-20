@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urn:OpenIdConnectProviderPolicy enabled="true" defaultPolicyGroupId="OasisOIDC01" trackUserSessionsForLogout="false" xmlns:urn="urn:pingidentity.com:pf:openid:connect:idp:policy">
+    <urn:ProviderPolicyGroup policyId="OasisOIDC01" idTokenLife="5" includeSriInIdToken="true" includeUserInfoInIdToken="true" includeSHashInIdToken="true" policyName="OasisOIDC01" accessTokenManagerId="OasisAT01">
+        <urn:UserInfoMapping>
+            <urn1:AttributeMap Name="sub" Type="Token" Value="username" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        </urn:UserInfoMapping>
+        <urn:scopeAttributesMap/>
+        <urn:attributeContractInclusionMap/>
+    </urn:ProviderPolicyGroup>
+    <urn:ProviderPolicyGroup policyId="PingCentralOIDC01" idTokenLife="5" includeSriInIdToken="true" includeUserInfoInIdToken="true" includeSHashInIdToken="true" policyName="PingCentralOIDC01" accessTokenManagerId="PingCentralUserATM">
+        <urn:UserInfoMapping>
+            <urn1:AttributeMap Name="PingCentral-Role" Type="Token" Value="PingCentral-Role" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:AttributeMap Name="sub" Type="Token" Value="sub" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:AttributeMap Name="given_name" Type="Token" Value="givenName" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:AttributeMap Name="family_name" Type="Token" Value="sn" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        </urn:UserInfoMapping>
+        <urn:scopeAttributesMap/>
+        <urn:attributeContractInclusionMap/>
+    </urn:ProviderPolicyGroup>
+</urn:OpenIdConnectProviderPolicy>

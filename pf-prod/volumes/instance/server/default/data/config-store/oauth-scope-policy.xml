@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:config xmlns:con="http://www.sourceid.org/2004/05/config">
+    <con:map name="scope-descriptions">
+        <con:item name="address">oidc address</con:item>
+        <con:item name="phone">oidc phone</con:item>
+        <con:item name="openid">oidc openid</con:item>
+        <con:item name="profile">oidc profile</con:item>
+        <con:item name="email">oidc email</con:item>
+    </con:map>
+    <con:item name="lastUpdated">1556913885583</con:item>
+    <con:map name="scope-group-descriptions"/>
+    <con:map name="scope-group-mappings"/>
+    <con:list name="dynamic-common-scopes"/>
+    <con:map name="exclusive-scope-descriptions">
+        <con:item name="ex02">exclusive scope 02</con:item>
+        <con:item name="ex01">exclusive scope 01</con:item>
+    </con:map>
+    <con:map name="exclusive-scope-group-descriptions"/>
+    <con:map name="exclusive-scope-group-mappings"/>
+    <con:list name="dynamic-exclusive-scopes"/>
+</con:config>

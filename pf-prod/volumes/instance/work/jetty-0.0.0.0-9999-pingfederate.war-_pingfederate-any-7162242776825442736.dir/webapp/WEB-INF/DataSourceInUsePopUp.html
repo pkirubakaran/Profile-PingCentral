@@ -1,0 +1,482 @@
+<html jwcid="shell">
+<head>
+    <link href="images/favicon.ico?v=4" rel="shortcut icon" type="image/x-icon"/>
+</head>
+<body>
+
+    <div id="header-container">
+        <span class="logo">
+            <b>PingFederate</b>
+            <sup>
+                <font size="1.5mm">®</font>
+            </sup>
+        </span>
+    </div>
+
+    <table class="interior popup">
+        <tr>
+            <td colspan="2">
+                <h2>
+                    <span key="Title" />
+                </h2>
+                <div class="messagetext">
+                    <b class="note">Note:&nbsp;</b>
+                    <span key="Datasource_in_use_note"/>&nbsp;
+                    <!-- Note: As a part of online help, src="scripts/v5/context-help.js" has replaced the /pf-help/scripts/start_help.js -->
+                    <!-- a href="javascript:openHelp('/pf-help','sp_endpoints')">Help</a -->
+                </div>
+            </td>
+        </tr>
+        <span>
+        <tr>
+            <td colspan="2">
+                    <span jwcid="@Conditional" condition="ognl:isShowProvisionerDS()">
+                        <fieldset>
+                            <legend><span key="Default_system_label"/></legend>
+                        </fieldset>
+                    </span>
+                    <span jwcid="@Conditional" condition="ognl:isShowServerSettingsUsingResource()">
+                        <fieldset>
+                            <legend><span key="Server_settings_label"/></legend>
+
+                                <table class="interior nested">
+                                    <span jwcid="serverSettings@Foreach" source="ognl:getServerSettingsUsingResource()">
+                                        <tr>
+                                            <td id="serverSetting" class="subtasklet">
+                                                <span jwcid="@Insert" value="ognl:components.serverSettings.value.getName()"/>
+                                                &nbsp;&nbsp;
+                                                <span jwcid="@Insert" value="ognl:components.serverSettings.value.getDisplayId()"/>
+                                            </td>
+                                        </tr>
+                                    </span>
+                                </table>
+
+                        </fieldset>
+                    </span>
+                    <span jwcid="@Conditional" condition="ognl:isShowIdpConnectionsUsingResource()">
+                        <fieldset>
+                            <legend><span key="Idp_connection_label"/></legend>
+
+                                <table class="interior nested">
+                                    <span jwcid="idpConns@Foreach" source="ognl:getIdpConnectionsUsingResource()">
+                                        <tr>
+                                            <td id="idpConnection" class="subtasklet">
+                                                <span jwcid="@Insert" value="ognl:components.idpConns.value.getName()"/>
+                                                &nbsp;&nbsp;
+                                                <span jwcid="@Insert" value="ognl:components.idpConns.value.getDisplayId()"/>
+                                            </td>
+                                        </tr>
+                                    </span>
+                                </table>
+
+                        </fieldset>
+                    </span>
+
+                    <span jwcid="@Conditional" condition="ognl:isShowPolicyContractUsingResource()">
+                        <fieldset>
+                            <legend><span key="Policy_contract_label"/></legend>
+
+                            <table class="interior nested">
+                                    <span jwcid="policyContracts@Foreach" source="ognl:getPolicyContractsUsingResource()">
+                                        <tr>
+                                            <td id="policyContract" class="subtasklet">
+                                                <span jwcid="@Insert" value="ognl:components.policyContracts.value.getName()"/>
+                                                &nbsp;&nbsp;
+                                                <span jwcid="@Insert" value="ognl:components.policyContracts.value.getDisplayId()"/>
+                                            </td>
+                                        </tr>
+                                    </span>
+                            </table>
+
+                        </fieldset>
+                    </span>
+
+
+                    <span jwcid="@Conditional" condition="ognl:isShowSpConnectionsUsingResource()" >
+                        <fieldset>
+                            <legend><span key="Sp_connection_label"/></legend>
+
+                                <table class="interior nested">
+                                    <span jwcid="spConns@Foreach" source="ognl:getSpConnectionsUsingResource()">
+                                        <tr>
+                                            <td id="spConnection" class="subtasklet">
+                                                <span jwcid="@Insert" value="ognl:components.spConns.value.getName()"/>
+                                                &nbsp;&nbsp;
+                                                <span jwcid="@Insert" value="ognl:components.spConns.value.getDisplayId()"/>
+                                            </td>
+                                        </tr>
+                                    </span>
+                                </table>
+
+                        </fieldset>
+                    </span>
+
+                    <span jwcid="@Conditional" condition="ognl:isShowIdpAdaptersUsingResource()" >
+                        <fieldset>
+                            <legend><span key="Idp_adapter_label"/></legend>
+
+                                <table class="interior nested">
+                                    <span jwcid="idpAdapters@Foreach" source="ognl:getIdpAdaptersUsingResource()">
+                                        <tr>
+                                            <td id="idpAdapter" class="subtasklet">
+                                                <span jwcid="@Insert" value="ognl:components.idpAdapters.value.getName()"/>
+                                                &nbsp;&nbsp;
+                                                <span jwcid="@Insert" value="ognl:components.idpAdapters.value.getDisplayId()"/>
+                                            </td>
+                                        </tr>
+                                    </span>
+                                </table>
+
+                        </fieldset>
+                    </span>
+
+                    <span jwcid="@Conditional" condition="ognl:isShowSpAdaptersUsingResource()" >
+                        <fieldset>
+                            <legend><span key="Sp_adapter_label"/></legend>
+
+                                <table class="interior nested">
+                                    <span jwcid="spAdapters@Foreach" source="ognl:getSpAdaptersUsingResource()">
+                                        <tr>
+                                            <td id="spAdapter" class="subtasklet">
+                                                <span jwcid="@Insert" value="ognl:components.spAdapters.value.getName()"/>
+                                                &nbsp;&nbsp;
+                                                <span jwcid="@Insert" value="ognl:components.spAdapters.value.getDisplayId()"/>
+                                            </td>
+                                        </tr>
+                                    </span>
+                                </table>
+
+                        </fieldset>
+                    </span>
+
+                    <span jwcid="@Conditional" condition="ognl:isShowTokenGeneratorsUsingResource()" >
+                        <fieldset>
+                            <legend><span key="Token_generator_label"/></legend>
+
+                                <table class="interior nested">
+                                    <span jwcid="tokenGenerators@Foreach" source="ognl:getTokenGeneratorsUsingResource()">
+                                        <tr>
+                                            <td id="tokenGenerator" class="subtasklet">
+                                                <span jwcid="@Insert" value="ognl:components.tokenGenerators.value.getName()"/>
+                                                &nbsp;&nbsp;
+                                                <span jwcid="@Insert" value="ognl:components.tokenGenerators.value.getDisplayId()"/>
+                                            </td>
+                                        </tr>
+                                    </span>
+                                </table>
+
+                        </fieldset>
+                    </span>
+
+                    <span jwcid="@Conditional" condition="ognl:isShowTokenProcessorsUsingResource()" >
+                        <fieldset>
+                            <legend><span key="Token_processor_label"/></legend>
+
+                                <table class="interior nested">
+                                    <span jwcid="tokenProcessors@Foreach" source="ognl:getTokenProcessorsUsingResource()">
+                                        <tr>
+                                            <td id="tokenProcessor" class="subtasklet">
+                                                <span jwcid="@Insert" value="ognl:components.tokenProcessors.value.getName()"/>
+                                                &nbsp;&nbsp;
+                                                <span jwcid="@Insert" value="ognl:components.tokenProcessors.value.getDisplayId()"/>
+                                            </td>
+                                        </tr>
+                                    </span>
+                                </table>
+
+                        </fieldset>
+                    </span>
+
+                    <span jwcid="@Conditional" condition="ognl:isShowAdapter2AdapterMappingsUsingResource()" >
+                        <fieldset>
+                            <legend><span key="A2A_label"/></legend>
+
+                                <table class="interior nested">
+                                    <span jwcid="adapter2AdapterMapping@Foreach" source="ognl:getAdapter2AdapterMappingsUsingResource()">
+                                        <tr>
+                                            <td id="adapter2AdapterMapping" class="subtasklet">
+                                                <span jwcid="@Insert" value="ognl:components.adapter2AdapterMapping.value.getName()"/>
+                                                &nbsp;&nbsp;
+                                                <span jwcid="@Insert" value="ognl:components.adapter2AdapterMapping.value.getDisplayId()"/>
+                                            </td>
+                                        </tr>
+                                    </span>
+                                </table>
+
+                        </fieldset>
+                    </span>
+
+                    <span jwcid="@Conditional" condition="ognl:isShowApc2SpAdapterMappingsUsingResource()" >
+                        <fieldset>
+                            <legend><span key="Apc_2_sp_adapter_mapping_label"/></legend>
+                            <table class="interior nested">
+                                <span jwcid="apc2SpAdapterMappings@Foreach" source="ognl:getApc2SpAdapterMappingsUsingResource()">
+                                    <tr>
+                                        <td id="apc2SpAdapterMapping" class="subtasklet">
+                                            <span jwcid="@Insert" value="ognl:components.apc2SpAdapterMappings.value.getName()"/>
+                                            &nbsp;&nbsp;
+                                            <span jwcid="@Insert" value="ognl:components.apc2SpAdapterMappings.value.getDisplayId()"/>
+                                        </td>
+                                    </tr>
+                                </span>
+                            </table>
+                        </fieldset>
+                    </span>
+
+                    <span jwcid="@Conditional" condition="ognl:isShowToken2TokenMappingsUsingResource()" >
+                        <fieldset>
+                            <legend><span key="T2T_label"/></legend>
+
+                                <table class="interior nested">
+                                    <span jwcid="token2TokenMapping@Foreach" source="ognl:getToken2TokenMappingsUsingResource()">
+                                        <tr>
+                                            <td id="token2TokenMapping" class="subtasklet">
+                                                <span jwcid="@Insert" value="ognl:components.token2TokenMapping.value.getName()"/>
+                                                &nbsp;&nbsp;
+                                                <span jwcid="@Insert" value="ognl:components.token2TokenMapping.value.getDisplayId()"/>
+                                            </td>
+                                        </tr>
+                                    </span>
+                                </table>
+
+                        </fieldset>
+                    </span>
+
+                    <span jwcid="@Conditional" condition="ognl:isShowPCVsUsingResource()" >
+                        <fieldset>
+                            <legend><span key="PCV_label"/></legend>
+
+                                <table class="interior nested">
+                                    <span jwcid="pcvInstances@Foreach" source="ognl:getPCVsUsingResource()">
+                                        <tr>
+                                            <td id="pcvInstance" class="subtasklet">
+                                                <span jwcid="@Insert" value="ognl:components.pcvInstances.value.getName()"/>
+                                                &nbsp;&nbsp;
+                                                <span jwcid="@Insert" value="ognl:components.pcvInstances.value.getDisplayId()"/>
+                                            </td>
+                                        </tr>
+                                    </span>
+                                </table>
+
+                        </fieldset>
+                    </span>
+
+                    <span jwcid="@Conditional" condition="ognl:isShowAccountLinkingServiceUsingResource()" >
+                        <fieldset>
+                            <legend><span key="Account_linking_label"/></legend>
+
+                                <table class="interior nested">
+                                    <span jwcid="accountLinkingServices@Foreach" source="ognl:getAccountLinkingServiceUsingResource()">
+                                        <tr>
+                                            <td id="accountLinkingService" class="subtasklet">
+                                                <span jwcid="@Insert" value="ognl:components.accountLinkingServices.value.getName()"/>
+                                                &nbsp;&nbsp;
+                                                <span jwcid="@Insert" value="ognl:components.accountLinkingServices.value.getDisplayId()"/>
+                                            </td>
+                                        </tr>
+                                    </span>
+                                </table>
+
+                        </fieldset>
+                    </span>
+
+                        <span jwcid="@Conditional" condition="ognl:isShowLocalIdentityProfilesUsingResource()" >
+                        <fieldset>
+                            <legend><span key="Local_identity_profile_label"/></legend>
+                                <table class="interior nested">
+                                    <span jwcid="localIdentities@Foreach" source="ognl:getLocalIdentityProfilesUsingResource()">
+                                        <tr>
+                                            <td id="localIdentities" class="subtasklet">
+                                                <span jwcid="@Insert" value="ognl:components.localIdentities.value.getName()"/>
+                                                &nbsp;&nbsp;
+                                                <span jwcid="@Insert" value="ognl:components.localIdentities.value.getDisplayId()"/>
+                                            </td>
+                                        </tr>
+                                    </span>
+                                </table>
+                        </fieldset>
+                    </span>
+
+                    <span jwcid="@Conditional" condition="ognl:isShowSessionStorageManagersUsingResource()" >
+                        <fieldset>
+                            <legend><span key="Authentication_sessions_label"/></legend>
+
+                                <table class="interior nested">
+                                    <span jwcid="sessionStorageMgrs@Foreach" source="ognl:getSessionStorageManagersUsingResource()">
+                                        <tr>
+                                            <td id="sessionStorageMgr" class="subtasklet">
+                                                <span jwcid="@Insert" value="ognl:components.sessionStorageMgrs.value.getName()"/>
+                                                &nbsp;&nbsp;
+                                                <span jwcid="@Insert" value="ognl:components.sessionStorageMgrs.value.getDisplayId()"/>
+                                            </td>
+                                        </tr>
+                                    </span>
+                                </table>
+
+                        </fieldset>
+                    </span>
+                    
+                    <!-- OAuth -->
+                    <span jwcid="@Conditional" condition="ognl:isShowOauthManagersUsingResource()" >
+                    <fieldset>
+                            <legend><span key="Oauth_settings_label"/></legend>
+                            <span jwcid="@Conditional" condition="ognl:isShowOpenIdConnectPoliciesUsingResource()" >
+                                <fieldset>
+                                    <legend><span key="Openid_connect_label"/></legend>
+
+                                        <table class="interior nested">
+                                            <span jwcid="openIdConnectPolicies@Foreach" source="ognl:getOpenIdConnectPoliciesUsingResource()">
+                                                <tr>
+                                                    <td id="openIdConnectPolicy" class="subtasklet">
+                                                        <span jwcid="@Insert" value="ognl:components.openIdConnectPolicies.value.getName()"/>
+                                                        &nbsp;&nbsp;
+                                                        <span jwcid="@Insert" value="ognl:components.openIdConnectPolicies.value.getDisplayId()"/>
+                                                    </td>
+                                                </tr>
+                                            </span>
+                                        </table>
+
+                                </fieldset>
+                            </span>
+
+                            <span jwcid="@Conditional" condition="ognl:isShowCibaRequestHandlingPoliciesUsingResource()" >
+                                <fieldset>
+                                    <legend><span key="CIBA_policies_label"/></legend>
+
+                                        <table class="interior nested">
+                                            <span jwcid="cibaPolicies@Foreach" source="ognl:getCibaRequestHandlingPoliciesUsingResource()">
+                                                <tr>
+                                                    <td id="cibaPolicy" class="subtasklet">
+                                                        <span jwcid="@Insert" value="ognl:components.cibaPolicies.value.getName()"/>
+                                                        &nbsp;&nbsp;
+                                                        <span jwcid="@Insert" value="ognl:components.cibaPolicies.value.getDisplayId()"/>
+                                                    </td>
+                                                </tr>
+                                            </span>
+                                        </table>
+
+                                </fieldset>
+                            </span>
+
+                            <span jwcid="@Conditional" condition="ognl:isShowResourceOwnerCredentialMappingsUsingResource()" >
+                                <fieldset>
+                                    <legend><span key="Ro_credential_mapping_label"/></legend>
+
+                                        <table class="interior nested">
+                                            <span jwcid="roCredentialMappings@Foreach" source="ognl:getResourceOwnerCredentialMappingsUsingResource()">
+                                                <tr>
+                                                    <td id="roCredentialMapping" class="subtasklet">
+                                                        <span jwcid="@Insert" value="ognl:components.roCredentialMappings.value.getName()"/>
+                                                        &nbsp;&nbsp;
+                                                        <span jwcid="@Insert" value="ognl:components.roCredentialMappings.value.getDisplayId()"/>
+                                                    </td>
+                                                </tr>
+                                            </span>
+                                        </table>
+
+                                </fieldset>
+                            </span>
+
+                            <span jwcid="@Conditional" condition="ognl:isShowIdpAdapterMappingsUsingResource()" >
+                                <fieldset>
+                                    <legend><span key="Idp_adapter_mapping_label"/></legend>
+
+                                        <table class="interior nested">
+                                            <span jwcid="idpAdapterMappings@Foreach" source="ognl:getIdpAdapterMappingsUsingResource()">
+                                                <tr>
+                                                    <td id="idpAdapterMapping" class="subtasklet">
+                                                        <span jwcid="@Insert" value="ognl:components.idpAdapterMappings.value.getName()"/>
+                                                        &nbsp;&nbsp;
+                                                        <span jwcid="@Insert" value="ognl:components.idpAdapterMappings.value.getDisplayId()"/>
+                                                    </td>
+                                                </tr>
+                                            </span>
+                                        </table>
+                                </fieldset>
+                            </span>
+
+                            <span jwcid="@Conditional" condition="ognl:isShowApcToUserKeyMappingsUsingResource()" >
+                                <fieldset>
+                                    <legend><span key="oauth_apc_mapping_label"/></legend>
+
+                                        <table class="interior nested">
+                                            <span jwcid="apcToUserKeyMappings@Foreach" source="ognl:getApcToUserKeyMappingsUsingResource()">
+                                                <tr>
+                                                    <td id="apcToUserKeyMapping" class="subtasklet">
+                                                        <span jwcid="@Insert" value="ognl:components.apcToUserKeyMappings.value.getName()"/>
+                                                        &nbsp;&nbsp;
+                                                        <span jwcid="@Insert" value="ognl:components.apcToUserKeyMappings.value.getDisplayId()"/>
+                                                    </td>
+                                                </tr>
+                                            </span>
+                                        </table>
+                                </fieldset>
+                            </span>
+
+                            <span jwcid="@Conditional" condition="ognl:isShowAccessTokenMappingsUsingResource()" >
+                                <fieldset>
+                                    <legend><span key="Access_token_mapping_label"/></legend>
+
+                                        <table class="interior nested">
+                                            <span jwcid="accessTokenMappings@Foreach" source="ognl:getAccessTokenMappingsUsingResource()">
+                                                <tr>
+                                                    <td id="accessTokenMapping" class="subtasklet">
+                                                        <span jwcid="@Insert" value="ognl:components.accessTokenMappings.value.getName()"/>
+                                                        &nbsp;&nbsp;
+                                                        <span jwcid="@Insert" value="ognl:components.accessTokenMappings.value.getDisplayId()"/>
+                                                    </td>
+                                                </tr>
+                                            </span>
+                                        </table>
+
+                                </fieldset>
+                            </span>
+
+                            <span jwcid="@Conditional" condition="ognl:isShowAccessGrantManagerUsingResource()" >
+                                <fieldset>
+                                    <legend><span key="Access_grant_mgr_label"/></legend>
+
+                                        <table class="interior nested">
+                                            <span jwcid="accessGrantMgrs@Foreach" source="ognl:getAccessGrantManagerUsingResource()">
+                                                <tr>
+                                                    <td id="accessGrantMgr" class="subtasklet">
+                                                        <span jwcid="@Insert" value="ognl:components.accessGrantMgrs.value.getName()"/>
+                                                        &nbsp;&nbsp;
+                                                        <span jwcid="@Insert" value="ognl:components.accessGrantMgrs.value.getDisplayId()"/>
+                                                    </td>
+                                                </tr>
+                                            </span>
+                                        </table>
+
+                                </fieldset>
+                            </span>
+
+                            <span jwcid="@Conditional" condition="ognl:isShowClientManagerUsingResource()" >
+                                <fieldset>
+                                    <legend><span key="Client_mgr_label"/></legend>
+
+                                        <table class="interior nested">
+                                            <span jwcid="clientMgrs@Foreach" source="ognl:getClientManagerUsingResource()">
+                                                <tr>
+                                                    <td id="clientMgr" class="subtasklet">
+                                                        <span jwcid="@Insert" value="ognl:components.clientMgrs.value.getName()"/>
+                                                        &nbsp;&nbsp;
+                                                        <span jwcid="@Insert" value="ognl:components.clientMgrs.value.getDisplayId()"/>
+                                                    </td>
+                                                </tr>
+                                            </span>
+                                        </table>
+
+                                </fieldset>
+                            </span>
+
+                    </fieldset>
+                    </span>
+
+                </td>
+            </tr>
+        </span>
+    </table>
+
+</body>
+</html>

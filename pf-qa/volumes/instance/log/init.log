@@ -1,0 +1,11 @@
+2019-12-20 17:06:18,198 pf.operational.mode: STANDALONE
+2019-12-20 17:06:18,199 Set 46 system properties from /opt/out/instance/bin/run.properties
+2019-12-20 17:06:18,201 Creating temp directory: /opt/out/instance/server/default/tmp
+2019-12-20 17:25:47,678 pf.operational.mode: STANDALONE
+2019-12-20 17:25:47,679 Set 46 system properties from /opt/out/instance/bin/run.properties
+2019-12-20 17:39:05,703 pf.operational.mode: STANDALONE
+2019-12-20 17:39:05,705 Set 46 system properties from /opt/out/instance/bin/run.properties
+2019-12-20 18:51:07,905 pf.operational.mode: STANDALONE
+2019-12-20 18:51:07,906 Set 46 system properties from /opt/out/instance/bin/run.properties
+2019-12-20 19:07:23,674 pf.operational.mode: STANDALONE
+2019-12-20 19:07:23,676 Set 46 system properties from /opt/out/instance/bin/run.properties

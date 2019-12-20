@@ -1,0 +1,118 @@
+div.portalheader
+{
+	background:
+	{
+		position: left center !important;
+		repeat: no-repeat !important;
+	}
+	&.app_int
+	{
+		background-image: url("v2/icons/icon-integration.png");
+	}
+	&.fed_settings
+	{
+		background-image: url("v2/icons/icon-federation.png");
+	}
+	&.sp
+	{
+		background-image: url("v2/icons/icon-sp.png");
+	}
+	&.idp
+	{
+		background-image: url("v2/icons/icon-idp.png");
+	}
+	&.affiliation
+	{
+		background-image: url("v2/icons/icon-affiliation.png");
+	}
+	&.systemsettings
+	{
+		background-image: url("v2/icons/icon-system.png");
+	}
+	&.admin
+	{
+		background-image: url("v2/icons/icon-admin.png");
+	}
+	&.security
+	{
+		background-image: url("v2/icons/icon-security.png");
+	}
+	&.oauth
+	{
+		background-image: url("v2/icons/icon-oauth.png");
+	}
+	&.advancedfed
+	{
+		background-image: url("v2/icons/icon-idpsp.png");
+	}
+}
+.pf-icon
+{
+	padding-bottom: 0px !important;
+	&.active
+	{
+		a
+		{
+			background: url("v2/icons/icon-active.png") left top no-repeat !important;
+			display: block;
+			height: 22px;
+			line-height: 22px;
+			padding-left: 20px;
+		}
+	}
+	&.inactive
+	{
+		a
+		{
+			background: url("v2/icons/icon-active.png") left top no-repeat !important;
+			display: block;
+			height: 22px;
+			line-height: 22px;
+			padding-left: 20px;
+		}
+	}
+	&.saml-1-1
+	{
+		a
+		{
+			background: url("v2/icons/icon-saml-1-1.png") left center no-repeat !important;
+			display: block;
+			height: 20px;
+			line-height: 20px;
+			margin-bottom: 2px;
+			padding-left: 75px;
+		}
+	}
+	&.saml-2-0
+	{
+		a
+		{
+			background: url("v2/icons/icon-saml-2-0.png") left center no-repeat !important;
+			display: block;
+			height: 20px;
+			line-height: 20px;
+			margin-bottom: 2px;
+			padding-left: 75px;
+		}
+	}
+	&.ws-trust-sts
+	{
+		a
+		{
+			background: url("v2/icons/icon-ws-trust-sts.png") left center no-repeat !important;
+			display: block;
+			height: 20px;
+			line-height: 20px;
+			margin-bottom: 2px;
+			padding-left: 75px;
+		}
+	}
+}
+
+a.arrow
+{
+	background: url("v2/icons/icon-portal-link-arrow.png") left center no-repeat !important;
+	display: block;
+	float: left;
+	padding: 0px 10px 0px 8px;
+}

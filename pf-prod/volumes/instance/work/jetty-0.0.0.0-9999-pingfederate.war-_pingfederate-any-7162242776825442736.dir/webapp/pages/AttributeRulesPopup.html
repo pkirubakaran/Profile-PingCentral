@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" media="screen" href="images/v3/css/main.css" />
+    <script type="text/JavaScript" src="scripts/v5/required.js" defer></script>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div id="content-container" class="popup">
+    <div class="errortext"> <ul id="attrRulesErrorList"></ul></div>
+    <div class="messagetext">Define authentication policy rules using attributes from the previous Authentication Source. Each rule is evaluated to determine the next action in the policy. If all the rules fail, you may choose to default to the general Success action or Fail.</div>
+    <table id="rulesTable" class="interior ui-table-2" width="100%">
+        <thead>
+        <tr class="ui-row-0 even">
+            <td class="ui-cell-0"></td>
+            <td class="ui-cell-0"></td>
+            <td class="ui-cell-1"><h2>Attribute Name</h2></td>
+            <td class="ui-cell-2"><h2>Condition</h2></td>
+            <td class="ui-cell-3"><h2>Value</h2></td>
+            <td class="ui-cell-4"><h2>Result</h2></td>
+            <td class="ui-cell-5"><h2>Action</h2></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="ui-row-1">
+            <td nowrap="result nowrap" class="ui-cell-0">
+                <a href="#">
+                    <img src="images/move_up.gif" width="12" height="12" border="0" class="icon-move-up" style="display:none; width:12px">
+                </a>
+            </td>
+            <td nowrap="nowrap" class="ui-cell-0">
+                <a href="#" name="attributeId">
+                    <img src="images/move_down.gif" width="12" height="12" border="0" class="icon-move-down" style="display:none">
+                </a>
+            </td>
+            <td nowrap="nowrap" class="ui-cell-1">
+                <label class="input-select required">
+                    <div><select name="attributeNameToAdd">
+                        <option value="">- SELECT -</option>
+                    </select></div>
+                </label>
+            </td>
+            <td nowrap="nowrap" class="ui-cell-2">
+                <label class="input-select required">
+                    <div><select name="conditionIdToAdd">
+                        <option value="" selected="selected">- SELECT -</option>
+                    </select></div>
+                </label></td>
+            <td nowrap="nowrap" class="ui-cell-3">
+                <label class="input-text required">
+                    <input type="text" name="comparisonValueToAdd" value="" class="top-align">	</label>
+            </td>
+            <td nowrap="nowrap" class="ui-cell-4">
+                <label class="input-text required">
+                <input type="text" name="resultToAdd" class="required top-align" value=""></label>
+            </td>
+            <td nowrap="nowrap" class="ui-cell-5">
+                <input type="submit" name="deleteRow" value="Delete" class="default link cancel">
+            </td>
+        </tr>
+        <span id="hiddenRow" style="display:none" />
+        </tbody>
+    </table>
+    <div id="popup-footer-container">
+        <div  class="footer">
+        <div class="buttons">
+            <input id="rulesCancel" type="submit" name="cancel" value="Cancel" class="default link cancel">
+            <input id="addRow" type="submit" name="$Submit" value="Add" class="default add-row">
+            <input id="submitRules" type="submit" name="$Submit" value="Done" class="primary">
+        </div>
+        </div>
+    </div>
+    <label class="input-checkbox">
+        <input type="checkbox" id="defaultSuccess" value="true" checked>
+        <div class="icon"></div>
+        Default to Success
+    </label>
+    
+    <script type="text/JavaScript">
+    $(document).ready(function() {
+        // re-add scripts when new row/dom posted
+        $('.add-row').click(function() {
+            setTimeout(function() {
+                $(':input[type=text], :input[type=password], textarea').filter(function(index) {
+                    return $(this).val() === '' && $(this).parent().hasClass('was-required');
+                }).parent().removeClass('was-required').addClass('required');
+                $('select').filter(function(index) {
+                    return  $(this).parent().parent().hasClass('was-required') && ($(this).val() === '0' || $(this).val() === '');
+                }).parent().parent().removeClass('was-required').addClass('required');
+                
+                // check required inputs on a page during interaction
+                $(':input[type=text], :input[type=password], textarea').keyup(function() {
+                    if ($(this).val() !== '') {
+                        if ($(this).parent().hasClass('required')) {
+                            // add 'was-required' to mark input if end user later
+                            // deletes the input values, need to re-mark as required
+                            $(this).parent().removeClass('required').addClass('was-required');
+                        }
+                    }
+                    else {
+                        if ($(this).parent().hasClass('was-required')) {
+                            $(this).parent().removeClass('was-required').addClass('required');
+                        }
+                    }
+                });
+                $('select').change(function() {
+                    if ($(this).val() !== '0' && $(this).val() !== '') {
+                        if ($(this).parent().parent().hasClass('required')) {
+                            // add 'was-required' to mark input if end user later
+                            // deletes the input values, need to re-mark as required
+                            $(this).parent().parent().removeClass('required').addClass('was-required');
+                        }
+                    }
+                    else {
+                        if ($(this).parent().parent().hasClass('was-required')) {
+                            $(this).parent().parent().removeClass('was-required').addClass('required');
+                        }
+                    }
+                });
+            }, 100);
+        });
+    });
+    </script>
+    
+</div>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<html jwcid="shell">
+<head>
+    <link href="images/favicon.ico?v=4" rel="shortcut icon" type="image/x-icon"/>
+</head>
+<body>
+
+    <div id="header-container">
+        <span class="logo">
+            <b>PingFederate</b>
+            <sup>
+                <font size="1.5mm">®</font>
+            </sup>
+        </span>
+    </div>
+
+    <table class="interior popup">
+        <tr>
+            <td colspan="2">
+                <h2>
+                    <span key="Title" />
+                </h2>
+                <div class="messagetext">
+                    <b class="note">Note:&nbsp; </b>
+                    <span key="C2c_contract_in_use_note"/>
+                </div>
+            </td>
+        </tr>
+        <span>
+            <tr>
+                <td colspan="2">
+                    <span jwcid="@Conditional" condition="ognl:isShowIdpConnectionsUsingResource()">
+                        <fieldset>
+                            <legend><span key="Idp_connection_label"/></legend>
+                            <table class="interior nested">
+                                <span jwcid="idpConns@Foreach" source="ognl:getIdpConnectionsUsingResource()">
+                                    <tr>
+                                        <td id="idpConnection" class="subtasklet">
+                                            <span jwcid="@Insert" value="ognl:components.idpConns.value.getName()"/>
+                                            &nbsp;&nbsp;
+                                            <span jwcid="@Insert" value="ognl:components.idpConns.value.getDisplayId()"/>
+                                        </td>
+                                    </tr>
+                                </span>
+                            </table>
+                        </fieldset>
+                    </span>
+
+                    <span jwcid="@Conditional" condition="ognl:isShowSpConnectionsUsingResource()" >
+                        <fieldset>
+                            <legend><span key="Sp_connection_label"/></legend>
+                            <table class="interior nested">
+                                <span jwcid="spConns@Foreach" source="ognl:getSpConnectionsUsingResource()">
+                                    <tr>
+                                        <td id="spConnection" class="subtasklet">
+                                            <span jwcid="@Insert" value="ognl:components.spConns.value.getName()"/>
+                                            &nbsp;&nbsp;
+                                            <span jwcid="@Insert" value="ognl:components.spConns.value.getDisplayId()"/>
+                                        </td>
+                                    </tr>
+                                </span>
+                            </table>
+                        </fieldset>
+                    </span>
+                    <span jwcid="@Conditional" condition="ognl:isShowAuthnSelectorsUsingResource()" >
+                        <fieldset>
+                            <legend><span key="Idp_authn_selector_mapping_label"/></legend>
+                            <table class="interior nested">
+                                <span jwcid="authnSelectorMappings@Foreach" source="ognl:getAuthnSelectorsUsingResource()">
+                                    <tr>
+                                        <td id="authnSelectorMapping" class="subtasklet">
+                                            <span jwcid="@Insert" value="ognl:components.authnSelectorMappings.value.getName()"/>
+                                            &nbsp;&nbsp;
+                                            <span jwcid="@Insert" value="ognl:components.authnSelectorMappings.value.getDisplayId()"/>
+                                        </td>
+                                    </tr>
+                                </span>
+                            </table>
+                        </fieldset>
+                    </span>
+                    <span jwcid="@Conditional" condition="ognl:isShowApc2SpAdapterMappingsUsingResource()" >
+                        <fieldset>
+                            <legend><span key="Apc_2_sp_adapter_mapping_label"/></legend>
+                            <table class="interior nested">
+                                <span jwcid="apc2SpAdapterMappings@Foreach" source="ognl:getApc2SpAdapterMappingsUsingResource()">
+                                    <tr>
+                                        <td id="apc2SpAdapterMapping" class="subtasklet">
+                                            <span jwcid="@Insert" value="ognl:components.apc2SpAdapterMappings.value.getName()"/>
+                                            &nbsp;&nbsp;
+                                            <span jwcid="@Insert" value="ognl:components.apc2SpAdapterMappings.value.getDisplayId()"/>
+                                        </td>
+                                    </tr>
+                                </span>
+                            </table>
+                        </fieldset>
+                    </span>
+                    <span jwcid="@Conditional" condition="ognl:isShowApcToUserKeyMappingsUsingResource()" >
+                        <fieldset>
+                            <legend><span key="oauth_apc_mapping_label"/></legend>
+                                <table class="interior nested">
+                                    <span jwcid="apcToUserKeyMappings@Foreach" source="ognl:getApcToUserKeyMappingsUsingResource()">
+                                        <tr>
+                                            <td id="apcToUserKeyMapping" class="subtasklet">
+                                                <span jwcid="@Insert" value="ognl:components.apcToUserKeyMappings.value.getName()"/>
+                                                &nbsp;&nbsp;
+                                                <span jwcid="@Insert" value="ognl:components.apcToUserKeyMappings.value.getDisplayId()"/>
+                                            </td>
+                                        </tr>
+                                    </span>
+                                </table>
+                        </fieldset>
+                    </span>
+                    <span jwcid="@Conditional" condition="ognl:isShowLocalIdentityProfilesUsingResource()" >
+                        <fieldset>
+                            <legend><span key="local_identity_profile_label"/></legend>
+                            <table class="interior nested">
+                                <span jwcid="lips@Foreach" source="ognl:getLocalIdentityProfilesUsingResource()">
+                                    <tr>
+                                        <td id="lip" class="subtasklet">
+                                            <span jwcid="@Insert" value="ognl:components.lips.value.getName()"/>
+                                            &nbsp;&nbsp;
+                                            <span jwcid="@Insert" value="ognl:components.lips.value.getDisplayId()"/>
+                                        </td>
+                                    </tr>
+                                </span>
+                            </table>
+                        </fieldset>
+                    </span>
+                    <span jwcid="@Conditional" condition="ognl:isShowIdpAdaptersUsingResource()" >
+                        <fieldset>
+                            <legend><span key="idp_adapter_label"/></legend>
+                            <table class="interior nested">
+                                <span jwcid="idpAdapters@Foreach" source="ognl:getIdpAdaptersUsingResource()">
+                                    <tr>
+                                        <td id="idpAdapter" class="subtasklet">
+                                            <span jwcid="@Insert" value="ognl:components.idpAdapters.value.getName()"/>
+                                            &nbsp;&nbsp;
+                                            <span jwcid="@Insert" value="ognl:components.idpAdapters.value.getDisplayId()"/>
+                                        </td>
+                                    </tr>
+                                </span>
+                            </table>
+                        </fieldset>
+                    </span>
+                </td>
+            </tr>
+        </span>
+    </table>
+
+</body>
+</html>

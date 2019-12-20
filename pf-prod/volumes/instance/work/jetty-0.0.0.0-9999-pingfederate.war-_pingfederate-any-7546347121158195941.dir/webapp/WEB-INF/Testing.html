@@ -1,0 +1,43 @@
+<html jwcid="shell">
+<body>
+    <h2>Help Names, Task Names, Step Names</h2>
+	<table class="interior">
+        <span jwcid="helpNames@Foreach" source="ognl:helpNames">
+	       	<tr>
+		       	<td><span jwcid="@InsertText" value="ognl:components.helpNames.value"/></td>
+	       	</tr>
+       </span>
+	</table>
+    <h2>Help Names</h2>
+	<table class="interior">
+        <span jwcid="helpNameList@Foreach" source="ognl:helpNameList">
+	       	<tr>
+		       	<td><span jwcid="@InsertText" value="ognl:components.helpNameList.value"/></td>
+	       	</tr>
+       </span>
+	</table>
+    <h2>Graphing List</h2>
+	<table class="interior">
+        <span jwcid="graphList@Foreach" source="ognl:graphList">
+	       	<tr>
+		       	<td><span jwcid="@InsertText" value="ognl:components.graphList.value"/></td>
+	       	</tr>
+       </span>
+	</table>
+    <h2>Graphing Doc List</h2>
+	<table class="interior">
+        <span jwcid="graphListDocs@Foreach" source="ognl:graphListDocs">
+	       	<tr>
+		       	<td><span jwcid="@InsertText" value="ognl:components.graphListDocs.value"/></td>
+	       	</tr>
+       </span>
+	</table>
+    <!--table class="interior">
+        <span jwcid="serializationList@Foreach" source="ognl:getTaskletSerializationList()">
+	       	<tr>
+		       	<td></td>
+	       	</tr>
+       </span>
+	</table-->
+</body>
+</html>

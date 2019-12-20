@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urn:AuthnSelectionConfig lastModifiedMillis="1573134678564" enableAuthnSelection="true" enableSpAuthnSelection="false" failIfNoSelection="false" xmlns:urn="urn:pingidentity.com:pf:authn-selection">
+    <urn:AuthnSelectionTrees>
+        <urn:AuthnSelectionTree treeName="PingCentral User Authentication" disabled="false" authnApiApp="">
+            <urn:AstRoot context="">
+                <urn:AstAction authnSelectorId="PingCentralUserAuth" xsi:type="urn:AuthnSelectorActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <urn:AstChild context="No">
+                    <urn:AstAction noOpType="CONTINUE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                </urn:AstChild>
+                <urn:AstChild context="Yes">
+                    <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                        <urn:AuthnSourceKey type="ADAPTER">HTMLFormAdapter02PCLogin</urn:AuthnSourceKey>
+                        <urn:fallbackToSuccess>true</urn:fallbackToSuccess>
+                    </urn:AstAction>
+                    <urn:AstChild context="Fail">
+                        <urn:AstAction noOpType="DONE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                    </urn:AstChild>
+                    <urn:AstChild context="Success">
+                        <urn:AstAction apcId="MZbwnCLT6qBNHgix" xsi:type="urn:ApcMappingActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <urn:AttributeMapping>
+                                <urn1:AttributeMap Name="Role" Type="Adapter" AttributeSourceId="HTMLFormAdapter02PCLogin" Value="UserRole" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                <urn1:AttributeMap Name="subject" Type="Adapter" AttributeSourceId="HTMLFormAdapter02PCLogin" Value="username" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                <urn1:AttributeMap Name="givenName" Type="Text" Value="LastName" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                <urn1:AttributeMap Name="sn" Type="Text" Value="FirstName" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                            </urn:AttributeMapping>
+                        </urn:AstAction>
+                    </urn:AstChild>
+                </urn:AstChild>
+            </urn:AstRoot>
+        </urn:AuthnSelectionTree>
+        <urn:AuthnSelectionTree treeName="LOA Extended Property Selector" disabled="false" authnApiApp="">
+            <urn:AstRoot context="">
+                <urn:AstAction authnSelectorId="LOAExtendedPropSelector" xsi:type="urn:AuthnSelectorActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <urn:AstChild context="MultiFactor">
+                    <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                        <urn:AuthnSourceKey type="ADAPTER">SingleFactor</urn:AuthnSourceKey>
+                        <urn:fallbackToSuccess>true</urn:fallbackToSuccess>
+                    </urn:AstAction>
+                    <urn:AstChild context="Fail">
+                        <urn:AstAction noOpType="DONE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                    </urn:AstChild>
+                    <urn:AstChild context="Success">
+                        <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <urn:AuthnSourceKey type="ADAPTER">MultiFactor</urn:AuthnSourceKey>
+                            <urn:fallbackToSuccess>true</urn:fallbackToSuccess>
+                            <urn:InputIdMapping Type="Adapter" AttributeSourceId="SingleFactor" Value="username"/>
+                        </urn:AstAction>
+                        <urn:AstChild context="Fail">
+                            <urn:AstAction noOpType="DONE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                        </urn:AstChild>
+                        <urn:AstChild context="Success">
+                            <urn:AstAction apcId="zybjdrwZWPG60J75" xsi:type="urn:ApcMappingActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                <urn:AttributeMapping>
+                                    <urn1:AttributeMap Name="AuthFactor" Type="Adapter" AttributeSourceId="MultiFactor" Value="AuthFactor" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                    <urn1:AttributeMap Name="subject" Type="Adapter" AttributeSourceId="SingleFactor" Value="username" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                    <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                </urn:AttributeMapping>
+                            </urn:AstAction>
+                        </urn:AstChild>
+                    </urn:AstChild>
+                </urn:AstChild>
+                <urn:AstChild context="SingleFactor">
+                    <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                        <urn:AuthnSourceKey type="ADAPTER">SingleFactor</urn:AuthnSourceKey>
+                        <urn:fallbackToSuccess>true</urn:fallbackToSuccess>
+                    </urn:AstAction>
+                    <urn:AstChild context="Fail">
+                        <urn:AstAction noOpType="DONE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                    </urn:AstChild>
+                    <urn:AstChild context="Success">
+                        <urn:AstAction apcId="zybjdrwZWPG60J75" xsi:type="urn:ApcMappingActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <urn:AttributeMapping>
+                                <urn1:AttributeMap Name="AuthFactor" Type="Adapter" AttributeSourceId="SingleFactor" Value="AuthFactor" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                <urn1:AttributeMap Name="subject" Type="Adapter" AttributeSourceId="SingleFactor" Value="username" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                            </urn:AttributeMapping>
+                        </urn:AstAction>
+                    </urn:AstChild>
+                </urn:AstChild>
+            </urn:AstRoot>
+        </urn:AuthnSelectionTree>
+        <urn:AuthnSelectionTree treeName="Internal Single Factor" disabled="true" authnApiApp="">
+            <urn:AstRoot context="">
+                <urn:AstAction authnSelectorId="InternalSingleFactor" xsi:type="urn:AuthnSelectorActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <urn:AstChild context="No">
+                    <urn:AstAction noOpType="CONTINUE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                </urn:AstChild>
+                <urn:AstChild context="Yes">
+                    <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                        <urn:AuthnSourceKey type="ADAPTER">SingleFactor</urn:AuthnSourceKey>
+                        <urn:fallbackToSuccess>true</urn:fallbackToSuccess>
+                    </urn:AstAction>
+                    <urn:AstChild context="Fail">
+                        <urn:AstAction noOpType="DONE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                    </urn:AstChild>
+                    <urn:AstChild context="Success">
+                        <urn:AstAction apcId="zybjdrwZWPG60J75" xsi:type="urn:ApcMappingActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <urn:AttributeMapping>
+                                <urn1:AttributeMap Name="AuthFactor" Type="Adapter" AttributeSourceId="SingleFactor" Value="AuthFactor" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                <urn1:AttributeMap Name="subject" Type="Adapter" AttributeSourceId="SingleFactor" Value="username" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                            </urn:AttributeMapping>
+                        </urn:AstAction>
+                    </urn:AstChild>
+                </urn:AstChild>
+            </urn:AstRoot>
+        </urn:AuthnSelectionTree>
+        <urn:AuthnSelectionTree treeName="Internal Multi Factor" disabled="true" authnApiApp="">
+            <urn:AstRoot context="">
+                <urn:AstAction authnSelectorId="InternalMultiFactor" xsi:type="urn:AuthnSelectorActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <urn:AstChild context="No">
+                    <urn:AstAction noOpType="CONTINUE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                </urn:AstChild>
+                <urn:AstChild context="Yes">
+                    <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                        <urn:AuthnSourceKey type="ADAPTER">SingleFactor</urn:AuthnSourceKey>
+                        <urn:fallbackToSuccess>true</urn:fallbackToSuccess>
+                    </urn:AstAction>
+                    <urn:AstChild context="Fail">
+                        <urn:AstAction noOpType="DONE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                    </urn:AstChild>
+                    <urn:AstChild context="Success">
+                        <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <urn:AuthnSourceKey type="ADAPTER">MultiFactor</urn:AuthnSourceKey>
+                            <urn:fallbackToSuccess>true</urn:fallbackToSuccess>
+                            <urn:InputIdMapping Type="Adapter" AttributeSourceId="SingleFactor" Value="username"/>
+                        </urn:AstAction>
+                        <urn:AstChild context="Fail">
+                            <urn:AstAction noOpType="DONE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                        </urn:AstChild>
+                        <urn:AstChild context="Success">
+                            <urn:AstAction apcId="zybjdrwZWPG60J75" xsi:type="urn:ApcMappingActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                <urn:AttributeMapping>
+                                    <urn1:AttributeMap Name="AuthFactor" Type="Adapter" AttributeSourceId="MultiFactor" Value="AuthFactor" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                    <urn1:AttributeMap Name="subject" Type="Adapter" AttributeSourceId="MultiFactor" Value="username" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                    <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                </urn:AttributeMapping>
+                            </urn:AstAction>
+                        </urn:AstChild>
+                    </urn:AstChild>
+                </urn:AstChild>
+            </urn:AstRoot>
+        </urn:AuthnSelectionTree>
+    </urn:AuthnSelectionTrees>
+    <urn:DefaultAuthnSources/>
+</urn:AuthnSelectionConfig>

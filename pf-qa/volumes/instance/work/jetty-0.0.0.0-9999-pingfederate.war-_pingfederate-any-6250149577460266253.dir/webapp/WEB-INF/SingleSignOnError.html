@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title><span jwcid="pageTitle"/></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="images/v3/css/main.css" />
+    <script type="text/JavaScript" src="scripts/v5/DOM_Fixes_2.js"></script>
+</head>
+<body jwcid="@Body" class="login">
+    
+    <center class="login-table">
+        <table class="logincontainer exception">
+            <tbody>
+                <tr>
+                    <td>
+                        <span jwcid="@branded:LoginHeader"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="errortext warning-message">
+                            <img src="images/error.gif" width="12" height="12" border="0" class="icon-error  error-icon">&nbsp;
+                            <span jwcid="@Conditional" condition="ognl:directLoginEnabled">
+                                An error occurred while trying to login with PingOne. You can <b><a href="/pingfederate/app">try again</a></b>, or <span jwcid="directLogin@PageLink" page="directLogin">login directly</span> instead.
+                            </span>
+                            <span jwcid="@Conditional" condition="ognl:!directLoginEnabled">
+                                An error occurred while trying to login with PingOne. Click <b><a href="/pingfederate/app">here</a></b> to try again.
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        <table>
+    </center>
+    <center class="login-table">
+        <table>
+            <tr>
+                <td class="loginversion"><span jwcid="@branded:PingLogo"/></td>
+            </tr>
+        </table>
+    </center>
+        
+</body>
+</html>

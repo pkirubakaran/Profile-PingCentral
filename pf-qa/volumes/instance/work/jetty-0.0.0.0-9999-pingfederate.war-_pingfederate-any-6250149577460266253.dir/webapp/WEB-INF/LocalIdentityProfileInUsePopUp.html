@@ -1,0 +1,78 @@
+<html jwcid="shell">
+<head>
+    <link href="images/favicon.ico?v=4" rel="shortcut icon" type="image/x-icon"/>
+</head>
+<body>
+
+<div id="header-container">
+    <span class="logo">
+        <b>PingFederate</b>
+        <sup>
+            <font size="1.5mm">®</font>
+        </sup>
+    </span>
+</div>
+
+<table class="interior popup">
+    <tr>
+        <td colspan="2">
+            <h2>
+                <span key="Title" />
+            </h2>
+            <div class="messagetext">
+                <b class="note">Note:&nbsp;</b>
+                <span key="Datasource_in_use_note"/>&nbsp;
+                <!-- Note: As a part of online help, src="scripts/v5/context-help.js" has replaced the /pf-help/scripts/start_help.js -->
+                <!-- a href="javascript:openHelp('/pf-help','sp_endpoints')">Help</a -->
+            </div>
+        </td>
+    </tr>
+    <span>
+        <tr>
+            <td colspan="2">
+                    <span jwcid="@Conditional" condition="ognl:isShowProvisionerDS()">
+                        <fieldset>
+                            <legend><span key="Default_system_label"/></legend>
+                        </fieldset>
+                    </span>
+
+                    <span jwcid="@Conditional" condition="ognl:isShowIdpAdaptersUsingResource()" >
+                        <fieldset>
+                            <legend><span key="Idp_adapter_label"/></legend>
+
+                                <table class="interior nested">
+                                    <span jwcid="idpAdapters@Foreach" source="ognl:getIdpAdaptersUsingResource()">
+                                        <tr>
+                                            <td id="idpAdapter" class="subtasklet">
+                                                <span jwcid="@Insert" value="ognl:components.idpAdapters.value.getName()"/>
+                                                &nbsp;&nbsp;
+                                                <span jwcid="@Insert" value="ognl:components.idpAdapters.value.getDisplayId()"/>
+                                            </td>
+                                        </tr>
+                                    </span>
+                                </table>
+                        </fieldset>
+                    </span>
+                    <span jwcid="@Conditional" condition="ognl:isShowAuthnSelectorsUsingResource()" >
+                        <fieldset>
+                            <legend><span key="Idp_authn_selector_mapping_label"/></legend>
+                            <table class="interior nested">
+                                <span jwcid="authnSelectorMappings@Foreach" source="ognl:getAuthnSelectorsUsingResource()">
+                                    <tr>
+                                        <td id="authnSelectorMapping" class="subtasklet">
+                                            <span jwcid="@Insert" value="ognl:components.authnSelectorMappings.value.getName()"/>
+                                            &nbsp;&nbsp;
+                                            <span jwcid="@Insert" value="ognl:components.authnSelectorMappings.value.getDisplayId()"/>
+                                        </td>
+                                    </tr>
+                                </span>
+                            </table>
+                        </fieldset>
+                    </span>
+                </td>
+            </tr>
+        </span>
+</table>
+
+</body>
+</html>

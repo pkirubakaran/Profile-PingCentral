@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c2c:c2cContract id="MZbwnCLT6qBNHgix" name="PingCentralUserPC" xmlns:c2c="http://pingidentity.com/2014/10/c2cContracts">
+    <c2c:extendedAttributes>
+        <c2c:attr name="Role"/>
+        <c2c:attr name="givenName"/>
+        <c2c:attr name="sn"/>
+    </c2c:extendedAttributes>
+</c2c:c2cContract>

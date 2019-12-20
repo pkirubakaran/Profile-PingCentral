@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urn:PluginConfiguration isInheritExtendedContractAttributes="false" name="SimplePCV02PCUsers" xmlns:urn="urn:sourceid.org:saml2:adapter:conf">
+    <urn:Fields/>
+    <urn:AdvancedFields/>
+    <urn:Tables>
+        <urn:Table name="Users">
+            <urn:Row>
+                <urn:Field name="Username">pcadmin</urn:Field>
+                <urn:Field name="Password">qyxwVisPDym9hdCRonNTLWamaYNDiqgUYsy5_L2y6r4.bPdxuVWs.2</urn:Field>
+                <urn:Field name="Confirm Password">93zkeaPfyywWB42qXw84zi18lTgb4EyxjpygF5Aak2U.FRuV4CCj.2</urn:Field>
+                <urn:Field name="Relax Password Requirements">false</urn:Field>
+            </urn:Row>
+            <urn:Row>
+                <urn:Field name="Username">pcappowner1</urn:Field>
+                <urn:Field name="Password">O424mT8Iu1EustRPPtUtvyI0ydF75TcW1YR22FBQZto.Kln8w0uw.2</urn:Field>
+                <urn:Field name="Confirm Password">eZuo1qMOjeiEtrPMcg5UlYuNAQfX2LiiGYl1GOxakt4.x9D7DavN.2</urn:Field>
+                <urn:Field name="Relax Password Requirements">false</urn:Field>
+            </urn:Row>
+        </urn:Table>
+    </urn:Tables>
+</urn:PluginConfiguration>

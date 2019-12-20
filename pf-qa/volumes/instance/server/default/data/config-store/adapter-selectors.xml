@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:config xmlns:con="http://www.sourceid.org/2004/05/config">
+    <con:map name="adapter-selectors">
+        <con:item name="InternalSingleFactor">com.pingidentity.pf.selectors.oauthclient.OAuthClientAdapterSelector</con:item>
+        <con:item name="InternalMultiFactor">com.pingidentity.pf.selectors.oauthclient.OAuthClientAdapterSelector</con:item>
+        <con:item name="LOAExtendedPropSelector">com.pingidentity.pf.selectors.ExtendedPropertyAuthnSelector</con:item>
+        <con:item name="PingCentralUserAuth">com.pingidentity.pf.selectors.oauthclient.OAuthClientAdapterSelector</con:item>
+    </con:map>
+</con:config>

@@ -1,0 +1,112 @@
+td.footer
+{
+	background: none;
+	border: none;
+	padding: 0px;
+}
+
+div#footer-container
+{
+	background-color: $footer-grey;
+	border-top: 1px solid $grey;
+	//bottom: 0px;
+	//position: fixed;
+	width: 100%;
+
+	.inner
+	{
+		margin: 0 10%;
+		//margin: 0 auto;
+		//min-width: $min-width;
+		width: 80%;
+		td.version
+		{
+			padding: 20px 0px 20px 0px;
+		}
+		td.footer
+		{
+			div.buttons
+			{
+				display: block;
+				float: none;
+				padding: 20px 20px 0px 0px;
+				text-align: right;
+				input[type="submit"]
+				{
+					@extend .transition;
+					@include rounded(0px);
+
+					background: $blue;
+					border: none;
+					color: $white;
+					cursor: pointer;
+					font-size: 13px;
+					height: 35px;
+					line-height: 35px;
+					margin-left: 10px;
+					padding: 0px 14px;
+					&#finishButton
+					{
+						font-weight: bold;
+					}
+					&:hover
+					{
+						background: $aqua;
+					}
+				}
+			}
+		}
+		ul.footer-list
+		{
+			list-style-type: none;
+			margin: 0px;
+			//padding: 0px 0px 20px 0px;
+			padding: 0px;
+			li
+			{
+				color: $text-light-grey;
+				margin: 0px;
+				padding: 1px 0px;
+				a
+				{
+					color: $text-light-grey;
+					text-decoration: underline;
+					&:active,
+					&:hover
+					{
+						color: $text-grey;
+					}
+				}
+				b
+				{
+					color: $text-light-grey;
+				}
+				img
+				{
+					display: none;
+				}
+				span
+				{
+					color: $text-light-grey;
+				}
+			}
+			&.list-0
+			{
+				margin-left: 20px;
+				li
+				{
+					&.item-3
+					{
+						padding-bottom: 15px;
+					}
+				}
+			}
+			&.list-1
+			{
+				background: url("v2/footer-logo.gif") right top no-repeat;
+				margin-right: 20px;
+				padding-top: 70px;
+			}
+		}
+	}
+}

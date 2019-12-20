@@ -1,0 +1,37 @@
+<html jwcid="shell">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+	
+	<div id="header-container">
+		<span class="logo">
+			<b>PingFederate</b>
+			<sup>
+				<font size="1.5mm">®</font>
+			</sup>
+		</span>
+	</div>
+	
+	<table class="interior popup">
+		<tr>
+			<td width="250px"><h2>Field Name</h2></td>
+			<td><h2>Validation</h2></td>
+		</tr>
+        <span jwcid="identityMapping">
+        	<tr>
+        		<td><span jwcid="fieldName"/></td>
+        		<td>
+            		<span jwcid="@Conditional" condition="ognl:components.identityMapping.value.isRequired()">Required<br></span>
+	        		<span jwcid="@Conditional" condition="ognl:components.identityMapping.value.isUnique()">Unique<br></span>
+    	    		<span jwcid="@Conditional" condition="ognl:components.identityMapping.value.isMultiValue()">Multi Value<br></span>
+        			<span jwcid="@Conditional" condition="ognl:components.identityMapping.value.isDisplayMinLength()">Min: <span jwcid="minLength"/><br></span>
+        			<span jwcid="@Conditional" condition="ognl:components.identityMapping.value.isDisplayMaxLength()">Max: <span jwcid="maxLength"/><br></span>
+        			<span jwcid="@Conditional" condition="ognl:components.identityMapping.value.isDisplayPattern()">Pattern: <span jwcid="pattern"/><br></span>
+        		</td>
+        	</tr>
+        </span>
+	</table>
+	
+</body>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+ <globalConfiguration>
+  <parameter name="sendMultiRefs" value="true"/>
+  <parameter name="disablePrettyXML" value="true"/>
+  <!-- parameter name="attachments.Directory" value=""/ -->
+  <parameter name="dotNetSoapEncFix" value="true"/>
+  <parameter name="enableNamespacePrefixOptimization" value="true"/>
+  <parameter name="sendXMLDeclaration" value="true"/>
+  <parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <parameter name="sendXsiTypes" value="true"/>
+ </globalConfiguration>
+ <handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <requestFlow name="checks">
+  <handler type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+  <handler type="java:org.apache.axis.handlers.SimpleAuthorizationHandler"/>
+ </requestFlow>
+ <handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <service name="SSODirectoryService" provider="java:RPC">
+  <parameter name="allowedMethods" value="getIDPList, getSPList, getAdapterInstanceList, getIdpAdapterInstanceList, getAdapterInstancesInfoByUsage, getIdpAdapterInstanceInfoByUsageList"/>
+  <parameter name="scope" value="Application"/>
+  <parameter name="className" value="com.pingidentity.ws.SSODirectoryService"/>
+  <beanMapping languageSpecificType="java:com.pingidentity.ws.SSOEntity" qname="ns1:SSOEntity" xmlns:ns1="urn:BeanService"/>
+  <beanMapping languageSpecificType="java:com.pingidentity.ws.NameId" qname="ns2:NameId" xmlns:ns2="urn:BeanService"/>
+  <beanMapping languageSpecificType="java:com.pingidentity.ws.AdapterInstanceContextInfo" qname="ns3:AdapterInstanceContextInfo" xmlns:ns3="urn:BeanService"/>
+  <beanMapping languageSpecificType="java:com.pingidentity.ws.ExtAdapterInstanceContextInfo" qname="ns4:ExtAdapterInstanceContextInfo" xmlns:ns4="urn:BeanService"/>
+  
+ </service>
+ <transport name="http">
+  <requestFlow>
+   <handler type="URLMapper"/>
+   <handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </requestFlow>
+  <parameter name="useDefaultQueryStrings" value="false"/>
+  <parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <parameter name="qs.method" value="com.pingidentity.ws.axis.transport.http.CustomQSMethodHandler"/>
+  <parameter name="qs:method" value="com.pingidentity.ws.axis.transport.http.CustomQSMethodHandler"/>
+  <parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </transport>
+ <transport name="local">
+  <responseFlow>
+   <handler type="LocalResponder"/>
+  </responseFlow>
+ </transport>
+</deployment>

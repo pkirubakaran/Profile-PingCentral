@@ -1,0 +1,31 @@
+html
+{
+	height: 100%
+}
+body
+{
+	background-color: $footer-grey;
+	color: $text-grey;
+	//display: none;
+	height: 100%;
+	//min-width: $min-width;
+}
+form
+{
+	height: 100%;
+}
+div#wrapper
+{
+	background: $background-blue url("v2/background-body.png") left top repeat-x !important;
+	//min-height: 100%;
+	overflow: auto;
+}
+div.portalheader
+{
+	background: none;
+	padding: 0px;
+}
+div.portalpadding
+{
+	padding: 0px;
+}

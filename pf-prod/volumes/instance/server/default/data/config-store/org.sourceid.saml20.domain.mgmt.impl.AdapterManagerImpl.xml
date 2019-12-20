@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:config xmlns:con="http://www.sourceid.org/2004/05/config">
+    <con:map name="IdpAuthnAdapterInstances">
+        <con:item name="MultiFactor">com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter</con:item>
+        <con:item name="HTMLFormAdapter01">com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter</con:item>
+        <con:item name="SingleFactor">com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter</con:item>
+        <con:item name="HTMLFormAdapter02PCLogin">com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter</con:item>
+    </con:map>
+    <con:map name="IdpAdapterInstanceParents">
+        <con:item name="MultiFactor">HTMLFormAdapter01</con:item>
+        <con:item name="SingleFactor">HTMLFormAdapter01</con:item>
+    </con:map>
+</con:config>

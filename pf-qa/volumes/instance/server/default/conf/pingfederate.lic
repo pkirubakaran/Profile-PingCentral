@@ -1,0 +1,13 @@
+ID=1521268
+Product=PingFederate
+Version=9.3
+IssueDate=2019-12-17
+Tier=Free
+ExpirationDate=2020-01-16
+EnforcementType=7
+SaasProvisioning=true
+WSTrustSTS=true
+OAuth=true
+Generator=WebAPI
+SignCode=FF07
+Signature=302C021463952B78C3652015659A50A8E3AA93522DDF31A8021471E812AA2E9886151A43DD9D35DEB24D2472AEF6

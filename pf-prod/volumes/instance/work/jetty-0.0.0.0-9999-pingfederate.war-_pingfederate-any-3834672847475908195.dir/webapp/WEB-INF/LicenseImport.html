@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title><span jwcid="pageTitle"/></title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" type="text/css" href="images/v3/css/main.css"/>
+    <script type="text/JavaScript" src="scripts/v5/DOM_Fixes_2.js"></script>
+    <script type="text/javascript" src="scripts/v5/auto-scroll.js"></script>
+    <link href="images/favicon.ico?v=4" rel="shortcut icon" type="image/x-icon"/>
+</head>
+
+<body jwcid="@Body" class="login">
+<span jwcid="@Form" delegate="ognl:beans.delegate">
+    <table class="logincontainer">
+        <tr>
+            <td align="left">
+                <span jwcid="@branded:LoginHeader"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <h1 class="login">Import License</h1>
+                <table class="login import-license">
+                     <span jwcid="@Conditional" condition="ognl:beans.delegate.hasErrors">
+                        <tr>
+                            <td>
+                                <div id="errorMessageDiv">
+                                    <span jwcid="@Delegator" delegate="ognl:beans.delegate.firstError"/>
+                                </div>
+                            </td>
+                        </tr>
+                    </span>
+                    <tr>
+                        <td class="login_license_import_left">
+                            You do not have a valid license configured. To obtain a valid license,
+                            <a href="mailto:sales@pingidentity.com">contact us</a> or visit
+                            <a href="https://support.pingidentity.com/">Ping Identity Licensing</a>.
+                            If you have already obtained a license, you may upload and install it into PingFederate.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="login_license_import_left">
+                            <label>
+                                License Filename
+                            </label>
+                            <label class="input-file-upload">
+                                <span class="button inline">Choose File</span>
+                                <span id="file-name" class="file-name"></span>
+                                <span jwcid="importLicense" onchange="insertFilename(this)"/>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="login_license_import_center">
+                            <span jwcid="@Submit" class="default" listener="ognl:listeners.onFormImport" value="Import"/>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td class="loginversion">
+                <span jwcid="@branded:PingLogo"/>
+            </td>
+        </tr>
+    </table>
+
+    <script type="text/javascript">
+        function insertFilename(obj){
+            var filename = obj.value;
+            var lastIndex = filename.lastIndexOf("\\");
+            if (lastIndex >= 0) {
+                filename = filename.substring(lastIndex + 1);
+            }
+            $('#file-name').html(document.createTextNode(filename));
+        }
+    </script>
+</span>
+
+</body>
+</html>
