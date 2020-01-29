@@ -1,8 +1,0 @@
-2019-12-20 17:10:19,027 | Administrator | UserAdmin,Admin,CryptoAdmin | 172.30.4.65 | USER | LOGIN_ATTEMPT |  | Login was successful
-2019-12-20 17:12:36,242 | Administrator | UserAdmin,Admin,CryptoAdmin | 172.30.4.65 | USER | LOGIN_ATTEMPT |  | Login was successful
-2019-12-20 17:13:13,725 | Administrator | UserAdmin,Admin,CryptoAdmin | 172.30.4.65 | CONFIG_ARCHIVE | IMPORT |  | pingfederate-v9.3.3-data-12-12-2019.zip
-2019-12-20 17:17:34,924 | Administrator | UserAdmin,Admin,CryptoAdmin | 172.30.4.65 | SERVER_SETTINGS | MODIFY |  | 
-2019-12-20 17:27:44,817 | Administrator | UserAdmin,Admin,CryptoAdmin | 172.30.4.65 | USER | LOGIN_ATTEMPT |  | Login was successful
-2019-12-20 17:41:23,291 | Administrator | UserAdmin,Admin,CryptoAdmin | 172.30.4.65 | USER | LOGIN_ATTEMPT |  | Login was successful
-2019-12-20 19:28:13,636 | Administrator |  | 172.30.4.65 | USER | LOGIN_ATTEMPT |  | Incorrect password
-2019-12-20 19:28:23,686 | Administrator | UserAdmin,Admin,CryptoAdmin | 172.30.4.65 | USER | LOGIN_ATTEMPT |  | Login was successful

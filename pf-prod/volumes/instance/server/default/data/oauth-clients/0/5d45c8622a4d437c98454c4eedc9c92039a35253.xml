@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urn:Clients xmlns:urn="urn:pingidentity.com:pf:oauth:client">
-    <urn:Client client_id="PingCentralUser" name="PingCentralUser" logo="" secret="f2dTHGFzgYhmZTV_ec3c25m0vH3RcDlEn9q-4aOnQWU.mvzTdIXm.2" persistentGrantExpirationTime="0" enabled="true" lastModified="2019-10-29T14:00:44.125Z" bypassApprovalPage="true" restrictScopes="false" jwksUri="" jwks="" clientAuthnType="SECRET" enforceOneTimeJWT="false" isRequireSignedRequest="false">
+    <urn:Client client_id="PingCentralUser" name="PingCentralUser" logo="" secret="dhaJqsTQpfHhMsQe7Yg1ZNUJYFtkC-Lz8BR2id-fYbA.H5KnhOp3.2" persistentGrantExpirationTime="0" enabled="true" lastModified="2020-01-29T04:28:50.536Z" bypassApprovalPage="true" restrictScopes="false" jwksUri="" jwks="" clientAuthnType="SECRET" enforceOneTimeJWT="false" isRequireSignedRequest="false">
         <urn:Description/>
         <urn:Grant type="authorization_code"/>
         <urn:RedirectUri>https://pingcentralconsole.rk.ping-eng.com:9031/*</urn:RedirectUri>
